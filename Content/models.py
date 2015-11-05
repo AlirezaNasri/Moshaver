@@ -1,16 +1,16 @@
 from django.db import models
 
 class ImageContent(models.Model):
-	image = models.ImageField(upload_to='')
+	image = models.ImageField(upload_to='/images')
 	caption = models.TextField(null=True, blank=True)
 
 class FileContent(models.Model):
-	file_field = models.FileField(upload_to='')
+	file_field = models.FileField(upload_to='/images')
 	description = models.TextField()
 
 class News(models.Model):
 	title = models.CharField(max_length=100)
-	title_image = models.ImageField(upload_to='')
+	title_image = models.ImageField(upload_to='/images')
 	images = models.ManyToManyField(ImageContent, null=True, blank=True)
 	pub_date = models.DateTimeField(auto_now=True)
 	summary = models.TextField()
@@ -19,14 +19,14 @@ class News(models.Model):
 
 class Workshop(models.Model):
 	title = models.CharField(max_length=100)
-	title_image = models.ImageField(upload_to='')
+	title_image = models.ImageField(upload_to='/images')
 	images = models.ManyToManyField(ImageContent)
 	summary = models.TextField()
 	body = models.TextField()
 	author = models.CharField(max_length=100)
 	audience = models.TextField()
-	audio = models.FileField(upload_to='')
-	video = models.FileField(upload_to='')
+	audio = models.FileField(upload_to='/images')
+	video = models.FileField(upload_to='/images')
 	where = models.TextField()
 	when = models.DateTimeField()
 
@@ -38,7 +38,7 @@ class Grad(models.Model):
 	major = models.CharField(max_length=100)
 	acc_major = models.CharField(max_length=100)
 	year = models.IntegerField()
-	results = models.ImageField(upload_to='')
+	results = models.ImageField(upload_to='/images')
 	city = models.CharField(max_length=100)
 	school = models.CharField(max_length=100)
 
@@ -66,7 +66,7 @@ class PsyContent(models.Model):
 class Interview(models.Model):
 	question = models.TextField()
 	answer = models.TextField()
-	image = models.ImageField(upload_to='')
+	image = models.ImageField(upload_to='/images')
 	date = models.DateTimeField()
 	grad = models.ForeignKey(Grad)
 	interviewer = models.CharField(max_length=100)

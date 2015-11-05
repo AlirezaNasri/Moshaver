@@ -35,13 +35,3 @@ def get_all_edus(req, page=1):
 	context = get_context(edu=[page * 10 - 10, page * 10])
 	return render(req, 'all_edus.html', context)
 
-def get_workshop(req, id):
-	try:
-		get_context
-
-
-
-
-
-
-
