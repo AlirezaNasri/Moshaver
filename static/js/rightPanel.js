@@ -1,5 +1,6 @@
 jQuery(document).ready(function(){
 	$(".collapsible > li > a").on("click", function(e){
+        e.preventDefault();
 
 		if(!$(this).hasClass("active")) {
 
