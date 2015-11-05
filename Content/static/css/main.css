@@ -1,0 +1,113 @@
+@font-face { 
+	font-family: BCompset;
+   	src: url('font/BCompset.ttf'),
+	url('font/BCompset.eot');
+ } 
+body {
+	font-family: 'BCompset'
+}
+.header {
+	position:absolute;
+    display: inline-block;
+	background-color:#f0f0f0;
+	height:27%;
+	width:100%;
+}
+
+.header #rightH{
+	position:relative;
+	height:100%;
+	width:70%;
+    float: right;
+    display: inline-block;
+	background-color:darkslategray;
+}
+
+a:visited { 
+    color: #404040;
+}
+
+.rightPanle {
+	position:absolute;
+    display: block;
+	width:17%;
+   	top:calc(29.5%);
+	right:0;
+	background: white;
+    text-align:right;
+    padding-right: 20px;
+    border: solid 1px rgba(104, 191, 187, 0.5);
+    
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 0px 10px -3px #68BFBB;
+    -moz-box-shadow: 0px 0px 10px -3px #68BFBB;
+    box-shadow: 0px 0px 10px -3px #68BFBB;
+}
+
+
+.wrap{
+	width: 100%;
+	max-width: 300px;
+}
+
+.collapsible{
+	
+	list-style: none;
+	font-family: "BCompset";
+	font-size:1.2em;
+	width:100%;
+	margin:0;
+	padding-left:10px;
+}
+
+
+.collapsible li {
+   	margin: 0;
+    border-bottom: solid rgba(104, 191, 187, 0.5) 1px;
+}
+
+.collapsible li a {
+	text-decoration:none;
+	display:block;
+  	padding:8px 12px;
+}
+
+.collapsible li a:hover {
+    background: rgba(28,28,28,0.8);
+    color:white;
+   	text-decoration:none;
+}
+
+.collapsible li ul { 
+	list-style: none;
+   	display: none;
+   	margin:0;
+	padding:0;
+}
+
+.collapsible li ul li {
+   	margin:0;
+   	border:0;
+}
+
+.collapsible li ul li:last-child {
+	border-bottom:0;
+}
+.collapsible li ul li a {
+   	padding: 5px 10px;
+   	display: block;
+   	padding-right: 40px;
+ }
+
+.collapsible li ul li a:hover {
+   	background: #d3d3d3;
+}
+
+
+.collapsible .dropdown > a {
+   	background: url(/images/arrowdown.png) no-repeat left center;
+}
+/*
+.collapsible .dropdown > a:hover {
+   	background: #d3d3d3 url(/images/arrowdown.png) no-repeat right center !important;
+}*/

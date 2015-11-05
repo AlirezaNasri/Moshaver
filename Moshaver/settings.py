@@ -53,6 +53,15 @@ ROOT_URLCONF = 'Moshaver.urls'
 
 WSGI_APPLICATION = 'Moshaver.wsgi.application'
 
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': ['/templates/'],
+        'APP_DIRS': True,
+        'OPTIONS': {
+        },
+    },
+]
 
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
@@ -81,4 +90,5 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL =  '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')

@@ -1,0 +1,51 @@
+{% extends 'header.html' %}
+{% load staticfiles %}
+{% block main %}
+<div id="tabs" >
+    <a href="#akhbarItem"><div class="button1">اخبار</div></a>
+    <a href="#kargahItem"><div class="button1">کارگاه ها</div></a>
+</div>
+
+<div class="MainItems">
+    <div id="akhbarItem">
+        {% for single_news in news %}
+        <div class="singleNews">
+            <div class="Ntitr">
+                <img src="/static/images/image2.jpg"/>
+                <p>{{single_news.title}}</p>
+                <p>{{single_news.pub_date}}</p>
+                <p>{{single_news.author}}</p>
+            </div>
+            <div class="Nmain">
+                <p>
+                {{single_news.summary}}
+                </p>
+            </div>
+            <div class="blur">
+                <a href="/news/{{single_news.id}}"><div class="edameBut">ادامه مطلب </div></a>
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+    
+    <div id="kargahItem">
+            <div class="singleWorkshop">
+            <div class="Wtitr">
+                <img src="images/20150401_162807.jpg"/>
+                <p>:عنوان</p>
+                <p>:مکان</p>
+                <p>:زمان</p>
+                <p>:مخاطب</p>
+            </div>
+            <div class="Wmain">
+                <p>
+            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
+                </p>
+            </div>
+            <div class="blur">
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

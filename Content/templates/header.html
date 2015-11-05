@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<head>
+	<title>Main</title>
+	<link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/leftPanel.css' %}">
+    <link rel="stylesheet" href="{% static 'css/billboard.css' %}">
+    <link rel="stylesheet" href="{% static 'css/main1.css' %}">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="{% static 'js/Jquery.js' %}"></script>
+	<script src="{% static 'js/rightPanel.js' %}"></script>
+    <script src="{% static 'js/mainItem.js' %}">s</script>
+</head>
+
+<body>
+	<div class="header">
+		<div id="rightH">
+			<div id="eftekharAfarin">
+				<div class="changeAbele">
+				</div>
+				<a href="#" class="prev_button" style="display:block; opacity:0;"></a>
+				<a href="#" class="next_button" style="display:block; opacity:0;"></a>
+				<span class="info_slide_dots" style="display:block; left:15px">
+				</span>
+			</div>
+		</div>
+		<div id="leftH">
+		</div>
+	</div>
+
+	<div id="billboard">
+	</div>
+
+	<div class="rightPanle">
+		<ul class="collapsible">
+			<!--li class="header"><input type="text" name="search" id="search" placeholder="Search"/></li-->
+			<li><a class='' href='#'>اخبار</a></li>
+			<li><a href='#'>کارگاه ها</a></li>
+			<li class='dropdown'><a href='#'> پرسش هاي متداول</a>
+			<ul>
+				<li ><a href='#'>موضوع اول</a></li>
+				<li ><a href='#'>موضوع دوم</a></li>
+			</ul>
+			</li>
+			<li><a href='#'>مصاحبه با رتبه هاي برتر</a></li>  
+			<li><a href='#'>مطالب روانشناسي</a></li>
+			<li><a href='#'>محتواي آموزشي</a></li>  
+			<li class='dropdown'><a href='#'>درباره ي ما</a>
+			<ul>
+				<li ><a href='#'>معرفي دفاتر</a></li>
+				<li ><a href='#'>معرفي مشاوران تحصيلي</a></li>
+				<li ><a href='#'>معرفي مشاوران باليني</a></li>
+				<li ><a href='#'>معرفي مشاوران اموزشي</a></li>
+			</ul>
+			</li>
+			<li><a href='#'>افتخار آفرينان</a></li>  
+            <script>
+                $('.collapsible').children('li').last().css({ borderBottomColor:"white"});
+            </script>
+		</ul>
+	</div>
+
+	<div class="leftPanel">
+        <div id="porseshMotedavel">
+            <h3>پرسش های متداول</h3>
+            <div class="porsesh">
+                <p><span class="big">پرسش:</span> سلام</p>
+                <p><span class="big">پاسخ: </span> سلام علیکم</p>
+            </div>
+    
+            <div class="porsesh">
+                <p><span class="big">پرسش:</span> سلام</p>
+                <p><span class="big">پاسخ: </span> سلام علیکم</p>
+            </div>
+            <script>
+                $('#porseshMotedavel').children('.porsesh').last().css({ borderBottomColor:"white"});
+            </script>
+        </div>
+        
+        <div id="matalebRavanshenasi">
+            <h3>مطالب روانشناسی</h3>
+            <p class="ravanshenasi">چگونه باشیم؟</p>
+            <p class="ravanshenasi">چگونه نباشیم؟</p>
+            <script>
+                $('#matalebRavanshenasi').children('.ravanshenasi').last().css({ borderBottomColor:"white"});
+            </script>
+        </div>
+        
+        <div id="mohtavaAmoozeshi">
+            <h3>محتوای آموزشی</h3>
+            <p class="amoozeshi">عنوان 1</p>
+            <p class="amoozeshi">عنوان 2</p>
+            <script>
+                $('#mohtavaAmoozeshi').children('.amoozeshi').last().css({ borderBottomColor:"white"});
+            </script>
+        </div>
+	</div>
+
+	<div class="main">
+		{% block main %} {% endblock %}
+	</div>
+
+</body>

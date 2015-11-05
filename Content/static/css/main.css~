@@ -1,0 +1,105 @@
+@font-face { 
+	font-family: BCompset;
+   	src: url('font/BCompset.ttf'),
+	url('font/BCompset.eot');
+ } 
+body {
+	font-family: 'tahoma'
+}
+.header {
+	position:absolute;
+	background-color:#f0f0f0;
+	height:25%;
+	width:100%;
+}
+
+.header #rightH{
+	position:absolute;
+	height:100%;
+	left:30%;
+	width:70%;
+	background-color:#c0c0c0;
+}
+
+.rightPanle {
+	position:absolute;
+	width:20%;
+	height:100%;
+   	top:calc(25% + 11px);
+	right:0;
+	background: white;
+}
+.wrap{
+	width: 100%;
+	max-width: 300px;
+}
+
+.collapsible{
+	
+	list-style: none;
+	font-family: 'HelveticaNeue', Arial, Helvetica, sans-serif;
+	font-size:14px;
+	width:100%;
+	margin:0;
+	padding:0;
+}
+
+.collapsible li.header{
+	color: #666;
+	border: 1px solid #bbb;
+}
+
+.collapsible li {
+   	margin: 0;
+	background:#F0F0F0;
+}
+
+.collapsible li a {
+	text-decoration:none;
+	color:#666;
+	display:block;
+  	padding:8px 12px;
+}
+
+.collapsible li a:hover {
+	background: #404040;
+   	text-decoration:none;
+}
+
+.collapsible li ul { 
+	list-style: none;
+   	background: #d3d3d3;
+   	display: none;
+   	margin:0;
+	padding:0;
+}
+
+.collapsible li ul li {
+   	margin:0;
+   	border:0;
+   	border-bottom:1px solid #bbb;
+}
+
+.collapsible li ul li:last-child {
+	border-bottom:0;
+}
+.collapsible li ul li a {
+   	padding: 5px 10px;
+   	display: block;
+   	padding-left: 33px;
+	background: #d3d3d3;
+ }
+
+.collapsible li ul li a:hover {
+   	background: #d9d9d9;
+}
+
+.collapsible .dropdown > a {
+   	background: url(/images/arrowdown.png) no-repeat right center;
+}
+
+.collapsible .dropdown > a:hover {
+   	background: #404040 url(/images/arrowdown.png) no-repeat right center !important;
+}
+
+
