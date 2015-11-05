@@ -1,69 +1,197 @@
 .leftPanel {
-    padding-right: 5px;
     position:absolute;
     display: inline-block;
     top:calc(29.5% );
     left:0;
     width: 25%;
-    background-color: white;
+    background-color: #f2f2f2;
     padding-left: 5px;
     text-align:right;
     font-size: 1em;
 }
 
+@media screen and (max-width: 1000px) {
+    .leftPanel
+    {
+        display: none;
+    }
+}
+
+#container {
+    border:1px solid black;
+}
 #porseshMotedavel {
     margin-top: -0.8em;
-    padding-right: 0.7em;
-    padding-left: 0.7em;
-    
+    background-color: white;
+    -webkit-box-shadow: 0px 2px 10px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 2px 10px  rgba(0,0,0,0.2);
+    box-shadow: 0px 2px 10px rgba(0,0,0,0.2);
     border-radius: 5px;
-    -webkit-box-shadow: 0px 0px 10px -3px rgba(64,64,64,1);
-    -moz-box-shadow: 0px 0px 10px -3px rgba(64,64,64,1);
-    box-shadow: 0px 0px 10px -3px rgba(64,64,64,1);
 }
 
-.porsesh{
+.leftPanel h3{
+    text-align: right;
+}
+
+.leftPanel a{
+    text-decoration: none;
+    color:#404040;
+}
+
+.leftPanel a:visited{
+    color:#404040;
+}
+
+#porseshMotedavel h3{
+    padding-right: 10px;
+    background-color: #F2D700;
+}
+
+#porseshMotedavel h4{
     position: relative;
-    width: 100%;
-    border-bottom: dashed darkslategray 1px;
+    margin-bottom: -10px;
 }
 
-p .big {
-    font-size:1.3em;
+#porseshMotedavel a:hover{
+    color: #CAA501;
 }
+
+#porseshMotedavel .porsesh{
+    position: relative;
+    LEFT:2%;
+    width: 96%;
+    border-bottom: solid #F2D701 1px;
+}
+
+#porseshMotedavel a:last-child .porsesh{
+    border-bottom: solid #f2f2f2 1px;
+}
+
+#porseshZigzag{
+    margin-bottom: -5%;
+    content: "";
+  display: block;
+  position: relative;
+  width: 100%;
+top:-20px;
+  height: 10px;
+  background:
+    linear-gradient(
+      45deg, transparent 33.333%,
+      white 33.333%, white 66.667%,
+      transparent 66.667%
+    ),
+    linear-gradient(
+      -45deg, #F2D701 33.333%,
+      white 33.333%, white 66.667%,
+      #F2D701 66.667%
+    );
+  background-size: 20px 40px;
+}
+
 
 #matalebRavanshenasi{
     margin-top: -0.5em;
-    padding-right: 0.7em;
-    padding-left: 0.7em;
-    
+
+    background-color: white;
+    -webkit-box-shadow: 0px 2px 10px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 2px 10px  rgba(0,0,0,0.2);
+    box-shadow: 0px 2px 10px rgba(0,0,0,0.2);
     border-radius: 5px;
-    -webkit-box-shadow: 0px 0px 10px -3px rgba(64,64,64,1);
-    -moz-box-shadow: 0px 0px 10px -3px rgba(64,64,64,1);
-    box-shadow: 0px 0px 10px -3px rgba(64,64,64,1);
+}
+
+#matalebRavanshenasi h3{
+    padding-right: 10px;
+    background-color: #68BED2;
+}
+
+#matalebRavanshenasi a:hover{
+    color: #4096AA;
 }
 
 .ravanshenasi {
     padding-bottom: 11px;
     position: relative;
-    width: 100%;
-    border-bottom: dashed darkslategray 1px;
+    LEFT:2%;
+    width: 96%;
+    border-bottom: solid #68BED2 1px;
+}
+
+#matalebRavanshenasi a:last-child .ravanshenasi{
+    border-bottom: solid #f2f2f2 1px;
+}
+
+#ravanshenasiZigzag{
+    margin-bottom: -5%;
+    content: "";
+  display: block;
+  position: relative;
+  width: 100%;
+top:-20px;
+  height: 10px;
+  background:
+    linear-gradient(
+      45deg, transparent 33.333%,
+      white 33.333%, white 66.667%,
+      transparent 66.667%
+    ),
+    linear-gradient(
+      -45deg, #68BED2 33.333%,
+      white 33.333%, white 66.667%,
+      #68BED2 66.667%
+    );
+  background-size: 20px 40px;
 }
 
 #mohtavaAmoozeshi{
     margin-top: -0.5em;
-    padding-right: 0.7em;
-    padding-left: 0.7em;
-    
+
+    background-color: white;
+    -webkit-box-shadow: 0px 2px 10px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 2px 10px  rgba(0,0,0,0.2);
+    box-shadow: 0px 2px 10px rgba(0,0,0,0.2);
     border-radius: 5px;
-    -webkit-box-shadow: 0px 0px 10px -3px rgba(64,64,64,1);
-    -moz-box-shadow: 0px 0px 10px -3px rgba(64,64,64,1);
-    box-shadow: 0px 0px 10px -3px rgba(64,64,64,1);
+}
+
+#mohtavaAmoozeshi h3{
+    padding-right: 10px;
+    background-color: #D26868;
 }
 
 .amoozeshi {
     padding-bottom: 11px;
     position: relative;
-    width: 100%;
-    border-bottom: dashed darkslategray 1px;
+    LEFT:2%;
+    width: 96%;
+    border-bottom: solid #D26868 1px;
+}
+
+#mohtavaAmoozeshi a:hover{
+    color: #D24040;
+}
+
+#mohtavaAmoozeshi a:last-child .amoozeshi{
+    border-bottom: solid #f2f2f2 1px;
+}
+
+#amoozeshiZigzag{
+    margin-bottom: -5%;
+    content: "";
+  display: block;
+  position: relative;
+  width: 100%;
+top:-20px;
+  height: 10px;
+  background:
+    linear-gradient(
+      45deg, transparent 33.333%,
+      white 33.333%, white 66.667%,
+      transparent 66.667%
+    ),
+    linear-gradient(
+      -45deg, #D26868 33.333%,
+      white 33.333%, white 66.667%,
+      #D26868 66.667%
+    );
+  background-size: 20px 40px;
 }

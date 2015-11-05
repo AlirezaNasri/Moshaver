@@ -1,0 +1,56 @@
+{% extends 'header.html' %}
+{% load staticfiles %}
+{% block main %}
+<div class="main">
+        <div id="tabs" >
+            <a href="#akhbarItem"><div class="button1">اخبار</div></a>
+            <a href="#kargahItem"><div class="button1">کارگاه ها</div></a>
+        </div>
+        <div class="MainItems">
+            <div id="akhbarItem">
+            {% for single_news in news %}
+                <div class="singleNews">
+                    <div class="Ntitr">
+                        <img src="/static/images/image2.jpg"/>
+                        <h3>{{single_news.title}}</h3>
+                    </div>
+                    <div class="Nmain">
+                        <p>
+                            {{single_news.summary}}
+                        </p>
+                    </div>
+                    <div class="Nfoot">
+                        <p>{{single_news.pub_date}}</p>
+                        <p>{{single_news.author}}</p>
+                    </div>
+                    <div class="blur">
+                        <a href="/news/{{single_news.id}}"><div class="edameBut">ادامه مطلب </div></a>
+                    </div>
+                </div>
+            {% endfor %}
+            </div>
+            
+            <div id="kargahItem">
+            {% for single_workshop in workshops %}
+                <div class="singleWorkshop">
+                    <div class="Wtitr">
+                        <img src="/static/images/image2.jpg"/>
+                        <h3>{{single_workshop.title}}</h3>
+                    </div>
+                    <div class="Wmain">
+                        <p>
+                            {{single_workshop.summary}}
+                        </p>
+                    </div>
+                    <div class="Wfoot">
+                        <p>{{single_workshop.where}}</p>
+                        <p>{{single_workshop.when}}</p>
+                        <p>{{single_workshop.audience}}</p>
+                    </div>
+                    <div class="blur">
+                         <a href="/news/{{single_workshop.id}}"><div class="edameBut">ادامه مطلب </div></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+	</div>

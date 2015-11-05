@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 {% load staticfiles %}
 <head>
-	<title>Main</title>
-	<link rel="stylesheet" href="{% static 'css/main.css' %}">
+	<title>مرکز مشاوره اختراعی</title>    
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
     <link rel="stylesheet" href="{% static 'css/leftPanel.css' %}">
     <link rel="stylesheet" href="{% static 'css/billboard.css' %}">
     <link rel="stylesheet" href="{% static 'css/main1.css' %}">
@@ -13,25 +13,12 @@
 </head>
 
 <body>
-	<div class="header">
-		<div id="rightH">
-			<div id="eftekharAfarin">
-				<div class="changeAbele">
-				</div>
-				<a href="#" class="prev_button" style="display:block; opacity:0;"></a>
-				<a href="#" class="next_button" style="display:block; opacity:0;"></a>
-				<span class="info_slide_dots" style="display:block; left:15px">
-				</span>
-			</div>
-		</div>
-		<div id="leftH">
-		</div>
-	</div>
-
-	<div id="billboard">
-	</div>
-
-	<div class="rightPanle">
+    <div class="header">
+<!--        <h3>مرکز مشاوره تحصیلی اختراعی</h3>-->
+        <img src="{% static 'images/logo.png' %}">
+        <input type="text" placeholder="جست و جو">
+	</div>   
+    <div class="rightPanle">
 		<ul class="collapsible">
 			<!--li class="header"><input type="text" name="search" id="search" placeholder="Search"/></li-->
 			<li><a class='' href='#'>اخبار</a></li>
@@ -54,50 +41,44 @@
 			</ul>
 			</li>
 			<li><a href='#'>افتخار آفرينان</a></li>  
-            <script>
-                $('.collapsible').children('li').last().css({ borderBottomColor:"white"});
-            </script>
+<!--            <script>
+                $('.collapsible').children('li').last().css({ borderBottomColor:"#f1f2f2"});
+            </script>-->
 		</ul>
-	</div>
+    </div>
 
-	<div class="leftPanel">
+    <div class="leftPanel">
         <div id="porseshMotedavel">
             <h3>پرسش های متداول</h3>
-            <div class="porsesh">
-                <p><span class="big">پرسش:</span> سلام</p>
-                <p><span class="big">پاسخ: </span> سلام علیکم</p>
-            </div>
-    
-            <div class="porsesh">
-                <p><span class="big">پرسش:</span> سلام</p>
-                <p><span class="big">پاسخ: </span> سلام علیکم</p>
-            </div>
-            <script>
-                $('#porseshMotedavel').children('.porsesh').last().css({ borderBottomColor:"white"});
-            </script>
+            <div ID="porseshZigzag"></div>
+            {% for interview in interviews %}
+                <a href="/inerView/{{interview.id}}">
+                    <div class="porsesh">
+                    <h4> {{interview.title}} </h4>
+                    <p> {{interview.text}} </p>
+                    </div>
+                </a>
+            {% endfor %}
         </div>
         
         <div id="matalebRavanshenasi">
             <h3>مطالب روانشناسی</h3>
-            <p class="ravanshenasi">چگونه باشیم؟</p>
-            <p class="ravanshenasi">چگونه نباشیم؟</p>
-            <script>
-                $('#matalebRavanshenasi').children('.ravanshenasi').last().css({ borderBottomColor:"white"});
-            </script>
+            <div ID="ravanshenasiZigzag"></div>
+            {% for psy_content in psy_contents %}
+                <a href="/psy_contents/{{psy_content.id}}"><p class="ravanshenasi">{{psy_content.title}}</p></a>
+            {% endfor %}
         </div>
         
         <div id="mohtavaAmoozeshi">
             <h3>محتوای آموزشی</h3>
-            <p class="amoozeshi">عنوان 1</p>
-            <p class="amoozeshi">عنوان 2</p>
-            <script>
-                $('#mohtavaAmoozeshi').children('.amoozeshi').last().css({ borderBottomColor:"white"});
-            </script>
+            <div ID="amoozeshiZigzag"></div>
+            {% for edu_content in edu_contents %}
+                <a href="/edu_contents/{{edu_content.id}}"><p class="amoozeshi">{{edu_content.title}}</p></a>
+            {% endfor %}
         </div>
 	</div>
-
-	<div class="main">
+    
+    <div class="main">
 		{% block main %} {% endblock %}
 	</div>
-
 </body>
