@@ -14,4 +14,8 @@ $(document).ready(function(){
             $(v).show();
         }
    });
+    
+    $(window).on( 'resize', function () {
+        $('#rightH').height($('#rightH').width()/2);
+    }).resize();
 });
