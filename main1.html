@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <head>
 	<title>Main</title>
-	<link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/leftPanel.css">
-    <link rel="stylesheet" href="css/billboard.css">
-    <link rel="stylesheet" href="css/main1.css">
-    <link rel="stylesheet" href="css/footer.css">
+	<link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/leftPanel.css' %}">
+    <link rel="stylesheet" href="{% static 'css/billboard.css' %}">
+    <link rel="stylesheet" href="{% static 'css/main1.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="js/Jquery.js"></script>
-	<script src="js/rightPanel.js"></script>
-    <script src="js/mainItem.js">s</script>
+    <script src="{% static 'js/Jquery.js' %}"></script>
+	<script src="{% static 'js/rightPanel.js' %}"></script>
+    <script src="{% static 'js/mainItem.js' %}">s</script>
 </head>
 
 <body>
     <div class="header">
 <!--        <h3>مرکز مشاوره تحصیلی اختراعی</h3>-->
         <div id="headerLogo">
-            <img src="images/logo.png">
+            <img src="/static/images/logo.png">
         </div>
         <input type="text" placeholder="جست و جو">
 <!--
@@ -64,13 +64,13 @@
         <div id="rightH">
             <div class="container">
                 <div id="slides">
-                    <img src="images/example-slide-1.jpg" alt="Photo by: Missy S Link: http://www.flickr.com/photos/listenmissy/5087404401/">
-                    <img src="images/example-slide-2.jpg" alt="Photo by: Daniel Parks Link: http://www.flickr.com/photos/parksdh/5227623068/">
-                    <img src="images/example-slide-3.jpg" alt="Photo by: Mike Ranweiler Link: http://www.flickr.com/photos/27874907@N04/4833059991/">
-                    <img src="images/example-slide-4.jpg" alt="Photo by: Stuart SeegerLink: http://www.flickr.com/photos/stuseeger/97577796/">
+                    <img src="/static/images/example-slide-1.jpg" alt="Photo by: Missy S Link: http://www.flickr.com/photos/listenmissy/5087404401/">
+                    <img src="/static/images/example-slide-2.jpg" alt="Photo by: Daniel Parks Link: http://www.flickr.com/photos/parksdh/5227623068/">
+                    <img src="/static/images/example-slide-3.jpg" alt="Photo by: Mike Ranweiler Link: http://www.flickr.com/photos/27874907@N04/4833059991/">
+                    <img src="/static/images/example-slide-4.jpg" alt="Photo by: Stuart SeegerLink: http://www.flickr.com/photos/stuseeger/97577796/">
                 </div>
             </div>
-            <script src="js/jquery.slides.js"></script>
+            <script src="{% static 'js/jquery.slides.js' %}"></script>
             <script>
                 $(function() {
                     $('#slides').slidesjs({
@@ -109,7 +109,7 @@
                     <div id="leftNews">
                         <div class="singleNews">
                             <div class="Ntitr">
-                                <img src="images/20150401_162807.jpg"/>
+                                <img src="/static/images/20150401_162807.jpg"/>
                                 <h3>عنوانی طولانی تر</h3>
                             </div>
                             <div class="Nmain">
@@ -127,7 +127,7 @@
                         </div>
                         <div class="singleNews">
                             <div class="Ntitr">
-                                <img src="images/20150401_162807.jpg"/>
+                                <img src="/static/images/20150401_162807.jpg"/>
                                 <h3>عنوان</h3>
                             </div>
                             <div class="Nmain">
@@ -148,7 +148,7 @@
                     <div id="rightNews">
                         <div class="singleNews">
                             <div class="Ntitr">
-                                <img src="images/20150401_162807.jpg"/>
+                                <img src="/static/images/20150401_162807.jpg"/>
                                 <h3>عنوان</h3>
                             </div>
                             <div class="Nmain">
@@ -166,7 +166,7 @@
                         </div>
                         <div class="singleNews">
                             <div class="Ntitr">
-                                <img src="images/20150401_162807.jpg"/>
+                                <img src="/static/images/20150401_162807.jpg"/>
                                 <h3>عنوان</h3>
                             </div>
                             <div class="Nmain">
@@ -188,7 +188,7 @@
                 <div id="kargahItem">
                         <div class="singleWorkshop">
                         <div class="Wtitr">
-                            <img src="images/20150401_162807.jpg"/>
+                            <img src="/static/images/20150401_162807.jpg"/>
                             <h3>عنوان</h3>
                         </div>
                         <div class="Wmain">

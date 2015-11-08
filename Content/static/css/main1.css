@@ -21,6 +21,8 @@
     -webkit-box-shadow: 0px -3px 8px -4px rgba(64,64,64,1);
     -moz-box-shadow: 0px -3px 8px -4px rgba(64,64,64,1);
     box-shadow: 0px -3px 8px -4px rgba(64,64,64,1);
+
+    line-height: 1.5em;
 }
 .button1:hover
 {
@@ -76,6 +78,7 @@
     margin-top: -7px;
     margin-bottom: -10px;
     color:darkslategray;
+    line-height: 2em;
 }
 .singleNews .Ntitr img{
     position: relative;
@@ -175,6 +178,9 @@
     top:0;
     position: absolute;
     z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .singleNews:hover .Ntitr,.singleNews:hover .Nmain, .singleNews:hover .Nfoot{
@@ -224,19 +230,24 @@
 }
 
 a .edameBut {
-    position: absolute;
     text-align: center;
     border-radius: 5px;
-    width: 28%;
-    left: 36%;
-    top: 47%;
     color: #0BAAC1;
     border: solid 2px #0BAAC1;
     display: none;
     font-size: 1.4em;
+    padding: 10px;
 }
 
 a .edameBut:hover{
     background-color: #0BAAC1;
     color: white;
+}
+
+#akhbarItem{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    max-height: 1400px;
+    overflow: hidden;
 }

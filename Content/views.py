@@ -17,7 +17,7 @@ def get_context(news=[0, 4], psy=[0, 4], edu=[0, 4], work=[0, 1]):
 
 def home_page(req):
 	context = get_context()
-	return render(req, 'main1.html', context)
+	return render(req, 'tmp.html', context)
 
 def get_all_workshops(req, page=1):
 	context = get_context(work=[page * 10 - 10, page * 10])
