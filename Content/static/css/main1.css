@@ -97,13 +97,17 @@
     padding-left: 15px;
     padding-right: 15px;
     color:#404040;
-    border-bottom: solid #EAEAEA 1px;
+    margin-bottom: 50px;
 }
 
 .singleNews .Nfoot {
+    position: absolute;
+    bottom: 0;
     padding-left: 15px;
     font-size: 0.9em;
     color:#68AEC2;
+    width: 100%;
+    border-top: solid #EAEAEA 1px;
 }
 
 .singleNews .Nfoot :first-child{
@@ -155,13 +159,17 @@
     padding-left: 15px;
     padding-right: 15px;
     color:#404040;
-    border-bottom: solid #EAEAEA 1px;
+    margin-bottom: 50px;
 }
 
 .singleWorkshop .Wfoot {
+    positoin: absolute;
+    bottom: 0;
     padding-left: 15px;
     font-size: 0.9em;
     color:#68AEC2;
+    width: 100%;
+    border-top: solid #EAEAEA 1px;
 }
 
 .singleWorkshop .Wfoot p{
@@ -242,13 +250,13 @@ a .edameBut {
     position: absolute;
     text-align: center;
     border-radius: 5px;
-    width: 28%;
     left: 36%;
     top: 47%;
     color: #0BAAC1;
     border: solid 2px #0BAAC1;
     display: none;
     font-size: 1.4em;
+    padding: 10px;
 }
 
 a .edameBut:hover{
@@ -258,8 +266,7 @@ a .edameBut:hover{
 
 #akhbarItem{
     display: flex;
-    flex-direction: column;
-    max-height: 1400px;
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
 }
