@@ -1,4 +1,9 @@
 # Created by .ignore support plugin (hsz.mobi)
+# Project files
+
+settings.json
+static/*
+
 ### JetBrains template
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm
 
