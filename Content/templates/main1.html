@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
-{% block main %}
-<div class="main">
+{% block contents %}
         <div id="rightH">
             <div class="container">
                 <div id="slides">
@@ -40,7 +39,7 @@
                 });
             </script>  
 		</div>   
-    
+    <div class="main">
         <div id="tabs" >
             <a href="#akhbarItem"><div class="button1">اخبار</div></a>
             <a href="#kargahItem"><div class="button1">کارگاه ها</div></a>
@@ -93,5 +92,5 @@
                 {% endfor %}
             </div>
         </div>
-    </div>
+    </main>
 {% endblock %}
