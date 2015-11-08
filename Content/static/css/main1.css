@@ -21,6 +21,7 @@
     -webkit-box-shadow: 0px -3px 8px -4px rgba(64,64,64,1);
     -moz-box-shadow: 0px -3px 8px -4px rgba(64,64,64,1);
     box-shadow: 0px -3px 8px -4px rgba(64,64,64,1);
+    line-height: 1.5em;
 }
 .button1:hover
 {
@@ -63,7 +64,7 @@
 
 .singleNews{
     position: relative;
-    width: 100%;
+    width: 48%;
     display: inline-block;
     background: white;
     margin-bottom: 4%;
@@ -84,6 +85,7 @@
     margin-top: -7px;
     margin-bottom: -10px;
     color:darkslategray;
+    line-height: 2em;
 }
 .singleNews .Ntitr img{
     position: relative;
@@ -141,6 +143,7 @@
     margin-top: -7px;
     margin-bottom: -10px;
     color:darkslategray;
+    line-height: 2em;
 }
 .singleWorkshop .Wtitr img{
     position: relative;
@@ -183,6 +186,10 @@
     top:0;
     position: absolute;
     z-index: 3;
+
+    display: flex;
+    align-items: center;
+    justify-items: center;
 }
 
 .singleNews:hover .Ntitr,.singleNews:hover .Nmain, .singleNews:hover .Nfoot{
@@ -247,4 +254,12 @@ a .edameBut {
 a .edameBut:hover{
     background-color: #0BAAC1;
     color: white;
+}
+
+#akhbarItem{
+    display: flex;
+    flex-direction: column;
+    max-height: 1400px;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
