@@ -9,7 +9,7 @@
 }
 .button1
 {
-    vertical-align:top;
+    vertical-align:bottom;
     width : 25%;
     background-color: #CACACA;
 	text-align: center;
@@ -51,14 +51,22 @@
     margin-top: -3px;
 }
 
+#leftNews{
+    float: left;
+    width: 49%;
+}
+
+#rightNews {
+    float: right;
+    width: 49%;
+}
+
 .singleNews{
-    vertical-align:top;
     position: relative;
-    width: 44%;
+    width: 100%;
     display: inline-block;
     background: white;
-    margin-right: 2%;
-    margin-left: 2.5%;
+    margin-bottom: 4%;
     
 /*
     border-radius: 5px;;

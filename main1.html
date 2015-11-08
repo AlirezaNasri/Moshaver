@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<head>
+	<title>Main</title>
+	<link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/leftPanel.css">
+    <link rel="stylesheet" href="css/billboard.css">
+    <link rel="stylesheet" href="css/main1.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="js/Jquery.js"></script>
+	<script src="js/rightPanel.js"></script>
+    <script src="js/mainItem.js">s</script>
+</head>
+
+<body>
+    <div class="header">
+<!--        <h3>مرکز مشاوره تحصیلی اختراعی</h3>-->
+        <div id="headerLogo">
+            <img src="images/logo.png">
+        </div>
+        <input type="text" placeholder="جست و جو">
+<!--
+        <div id="showMenu">
+            <i class="fa fa-bars x3"></i>
+        </div>
+-->
+	</div>
+    
+    <div class="leftPanel">
+        <div id="porseshMotedavel">
+            <h3>پرسش های متداول</h3>
+            <div ID="porseshZigzag"></div>
+            <a href="/porsesh1">
+                <div class="porsesh">
+                <h4> سلام </h4>
+                <p>سلام علیکم</p>
+                </div>
+            </a>
+            <a href="/porsesh2">
+            <div class="porsesh">
+                <h4> سلام؟ </h4>
+                <p> سلام </p>
+            </div>
+            </a>
+        </div>
+        
+        <div id="matalebRavanshenasi">
+            <h3>مطالب روانشناسی</h3>
+            <div ID="ravanshenasiZigzag"></div>
+            <a href="/ravanshenasi1"><p class="ravanshenasi">چگونه باشیم؟</p></a>
+            <a href="/ravanshenasi2"><p class="ravanshenasi">چگونه نباشیم؟</p></a>
+        </div>
+        
+        <div id="mohtavaAmoozeshi">
+            <h3>محتوای آموزشی</h3>
+            <div ID="amoozeshiZigzag"></div>
+            <a href="/amoozeshi1"><p class="amoozeshi">عنوان 1</p></a>
+            <a href="/amoozeshi2"><p class="amoozeshi">عنوان 2</p></a>
+        </div>
+	</div>
+    
+    <div class="contain">
+        <div id="rightH">
+            <div class="container">
+                <div id="slides">
+                    <img src="images/example-slide-1.jpg" alt="Photo by: Missy S Link: http://www.flickr.com/photos/listenmissy/5087404401/">
+                    <img src="images/example-slide-2.jpg" alt="Photo by: Daniel Parks Link: http://www.flickr.com/photos/parksdh/5227623068/">
+                    <img src="images/example-slide-3.jpg" alt="Photo by: Mike Ranweiler Link: http://www.flickr.com/photos/27874907@N04/4833059991/">
+                    <img src="images/example-slide-4.jpg" alt="Photo by: Stuart SeegerLink: http://www.flickr.com/photos/stuseeger/97577796/">
+                </div>
+            </div>
+            <script src="js/jquery.slides.js"></script>
+            <script>
+                $(function() {
+                    $('#slides').slidesjs({
+                        width: 940,
+                        height: 528,
+                        play: 
+                        {
+                          active: true,
+                          auto: true,
+                          interval: 4000,
+                          swap: true,
+                            effect: "fade"
+                        },
+                        navigation: {
+                            effect: "fade"
+                        },
+                        pagination: {
+                            effect: "fade"
+                        },
+                        effect: {
+                            fade: {
+                                speed: 400
+                            }
+                        }
+                    });
+                });
+          </script>     
+        </div>
+        <div class="main">
+            <div id="tabs" >
+                <a href="#akhbarItem"><div class="button1">اخبار</div></a>
+                <a href="#kargahItem"><div class="button1">کارگاه ها</div></a>
+            </div>
+            <div class="MainItems">
+                <div id="akhbarItem">
+                    <div id="leftNews">
+                        <div class="singleNews">
+                            <div class="Ntitr">
+                                <img src="images/20150401_162807.jpg"/>
+                                <h3>عنوانی طولانی تر</h3>
+                            </div>
+                            <div class="Nmain">
+                                <p>
+                           سس سسلورم ایسسپسو دبیسلیبر ستون و سطیبلیرآنچنان که لازم استیببلی یبلیب و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
+                                </p>
+                            </div>
+                            <div class="Nfoot">
+                                <p>75/2/28</p>
+                                <p>محمد رضا زارع</p>
+                            </div>
+                            <div class="blur">
+                                <a href="/newsNum"><div class="edameBut">ادامه مطلب </div></a>
+                            </div>
+                        </div>
+                        <div class="singleNews">
+                            <div class="Ntitr">
+                                <img src="images/20150401_162807.jpg"/>
+                                <h3>عنوان</h3>
+                            </div>
+                            <div class="Nmain">
+                                <p>
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی موجود طراحی اساسا مورد استفاده قرار گیرد.
+                                </p>
+                            </div>
+                            <div class="Nfoot">
+                                <p>74/12/7</p>
+                                <p>علیرضا نصری</p>
+                            </div>
+                            <div class="blur">
+                                <a href="/newsNum"><div class="edameBut">ادامه مطلب </div></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="rightNews">
+                        <div class="singleNews">
+                            <div class="Ntitr">
+                                <img src="images/20150401_162807.jpg"/>
+                                <h3>عنوان</h3>
+                            </div>
+                            <div class="Nmain">
+                                <p>
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی موجود طراحی اساسا مورد استفاده قرار گیرد.
+                                </p>
+                            </div>
+                            <div class="Nfoot">
+                                <p>74/12/7</p>
+                                <p>علیرضا نصری</p>
+                            </div>
+                            <div class="blur">
+                                <a href="/newsNum"><div class="edameBut">ادامه مطلب </div></a>
+                            </div>
+                        </div>
+                        <div class="singleNews">
+                            <div class="Ntitr">
+                                <img src="images/20150401_162807.jpg"/>
+                                <h3>عنوان</h3>
+                            </div>
+                            <div class="Nmain">
+                                <p>
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی موجود طراحی اساسا مورد استفاده قرار گیرد.
+                                </p>
+                            </div>
+                            <div class="Nfoot">
+                                <p>74/12/7</p>
+                                <p>علیرضا نصری</p>
+                            </div>
+                            <div class="blur">
+                                <a href="/newsNum"><div class="edameBut">ادامه مطلب </div></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="kargahItem">
+                        <div class="singleWorkshop">
+                        <div class="Wtitr">
+                            <img src="images/20150401_162807.jpg"/>
+                            <h3>عنوان</h3>
+                        </div>
+                        <div class="Wmain">
+                            <p>
+                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
+                            </p>
+                        </div>
+                        <div class="Wfoot">
+                            <p>تهران</p>
+                            <p>8/8/88</p>
+                            <p>والدین</p>
+                        </div>
+                        <div class="blur">
+                             <a href="/workshopNum"><div class="edameBut">ادامه مطلب </div></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+	   </div>
+    </div>
+    
+    <div class="rightPanle">
+		<ul class="collapsible">
+			<!--li class="header"><input type="text" name="search" id="search" placeholder="Search"/></li-->
+			<li><a class='' href='#'>اخبار</a></li>
+			<li><a href='#'>کارگاه ها</a></li>
+			<li class='dropdown'><a href='#'> پرسش هاي متداول</a>
+			<ul>
+				<li ><a href='#'>موضوع اول</a></li>
+				<li ><a href='#'>موضوع دوم</a></li>
+			</ul>
+			</li>
+			<li><a href='#'>مصاحبه با رتبه هاي برتر</a></li>  
+			<li><a href='#'>مطالب روانشناسي</a></li>
+			<li><a href='#'>محتواي آموزشي</a></li>  
+			<li class='dropdown'><a href='#'>درباره ي ما</a>
+			<ul>
+				<li ><a href='#'>معرفي دفاتر</a></li>
+				<li ><a href='#'>معرفي مشاوران تحصيلي</a></li>
+				<li ><a href='#'>معرفي مشاوران باليني</a></li>
+				<li ><a href='#'>معرفي مشاوران اموزشي</a></li>
+			</ul>
+			</li>
+			<li><a href='#'>افتخار آفرينان</a></li>  
+<!--            <script>
+                $('.collapsible').children('li').last().css({ borderBottomColor:"#f1f2f2"});
+            </script>-->
+		</ul>
+
+    </div>
+    
+    <div id="footer"></div>
+</body>
