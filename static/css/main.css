@@ -4,9 +4,9 @@
 	url('font/BCompset.eot');
  } 
 body {
-    font-family: 'BCompset';
+	font-family: 'BCompset';
     background-color: #f2f2f2;
-    -webkit-font-smoothing: antialiased;
+    margin:0;
 }
 
 .header {
