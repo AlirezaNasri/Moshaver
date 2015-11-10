@@ -9,9 +9,13 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 """
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-import os
+import os,json
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
+
+
+with open(os.path.join(BASE_DIR, 'settings.json'), 'r') as settings_file:
+    settings_dict = json.loads(settings_file.read())
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
@@ -65,10 +69,15 @@ TEMPLATES = [
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
 
+DB_PASSWORD = settings_dict['db_password']
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'moshaver',
+        'USER': 'moshaver',
+        'PASSWORD': DB_PASSWORD,
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
@@ -90,4 +99,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL =  '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
