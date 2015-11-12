@@ -5,11 +5,14 @@ class ImageContent(models.Model):
 	caption = models.TextField(null=True, blank=True)
 
 	def __str__(self):
-		return caption
+		return self.caption
 
 class FileContent(models.Model):
 	file_field = models.FileField(upload_to='static')
 	description = models.TextField()
+
+	def __str__(self):
+		return self.description
 
 class News(models.Model):
 	title = models.CharField(max_length=100)
@@ -19,6 +22,9 @@ class News(models.Model):
 	summary = models.TextField()
 	body = models.TextField()
 	author = models.CharField(max_length=100)
+
+	def __str__(self):
+		return self.title
 
 class Workshop(models.Model):
 	title = models.CharField(max_length=100)
@@ -33,6 +39,9 @@ class Workshop(models.Model):
 	where = models.TextField()
 	when = models.DateTimeField()
 
+	def __str__(self):
+		return self.title
+
 class Grad(models.Model):
 	name = models.CharField(max_length=100)
 	image = models.ForeignKey(ImageContent, null=True, blank=True)
@@ -45,6 +54,8 @@ class Grad(models.Model):
 	city = models.CharField(max_length=100)
 	school = models.CharField(max_length=100)
 
+	def __str__(self):
+		return self.name
 class Advisor(models.Model):
 	name = models.CharField(max_length=100)
 	image = models.ForeignKey(ImageContent)
@@ -53,10 +64,16 @@ class Advisor(models.Model):
 	email = models.EmailField()
 	position = models.TextField()
 
+	def __str__(self):
+		return self.name
+
 class Office(models.Model):
 	tel = models.CharField(max_length=100)
 	address = models.TextField()
 	available_times = models.TextField()
+
+	def __str__(self):
+		return self.address
 
 class PsyContent(models.Model):
 	title = models.CharField(max_length=100)
@@ -65,6 +82,9 @@ class PsyContent(models.Model):
 	summary = models.TextField()
 	body = models.TextField()
 	author = models.CharField(max_length=100)
+
+	def __str__(self):
+		return self.title
 
 class Interview(models.Model):
 	question = models.TextField()
@@ -84,3 +104,6 @@ class EduContent(models.Model):
 	body = models.TextField()
 	author = models.CharField(max_length=100)
 	files = models.ManyToManyField(FileContent, null=True, blank=True)
+
+	def __str__(self):
+		return self.title
