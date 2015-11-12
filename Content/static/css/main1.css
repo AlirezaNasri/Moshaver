@@ -85,7 +85,6 @@
     margin-top: -7px;
     margin-bottom: -10px;
     color:darkslategray;
-    line-height: 2em;
 }
 .singleNews .Ntitr img{
     position: relative;
@@ -97,7 +96,7 @@
     padding-left: 15px;
     padding-right: 15px;
     color:#404040;
-    margin-bottom: 50px;
+    margin-bottom: 60px;
 }
 
 .singleNews .Nfoot {
@@ -147,7 +146,6 @@
     margin-top: -7px;
     margin-bottom: -10px;
     color:darkslategray;
-    line-height: 2em;
 }
 .singleWorkshop .Wtitr img{
     position: relative;
