@@ -2,6 +2,7 @@
 {% load staticfiles %}
 
 {% block contents %}
+    <link rel="stylesheet" href="{% static 'css/main1.css' %}">
     <div id="rightH">
         <div class="container">
             <div id="slides">
@@ -50,7 +51,7 @@
                 {% for single_news in news %}
                     <div class="singleNews">
                         <div class="Ntitr">
-                            <img src="/static/images/{{single_news.title_image}}"/>
+                            <img src="{{single_news.title_image}}"/>
                             <h3>{{single_news.title}}</h3>
                         </div>
                         <div class="Nmain">
@@ -63,7 +64,7 @@
                             <p>{{single_news.author}}</p>
                         </div>
                         <div class="blur">
-                            <a href="/news/{{single_news.id}}"><div class="edameBut">ادامه مطلب </div></a>
+                            <a href="/news/{{single_news.id}}/"><div class="edameBut">ادامه مطلب </div></a>
                         </div>
                     </div>
                 {% endfor %}
@@ -73,7 +74,7 @@
                 {% for single_workshop in workshops %}
                 <div class="singleWorkshop">
                     <div class="Wtitr">
-                        <img src="/static/images/{{single_workshop.title_image}}"/>
+                        <img src="{{single_workshop.title_image}}"/>
                         <h3>{{single_workshop.title}}</h3>
                     </div>
                     <div class="Wmain">
@@ -87,7 +88,7 @@
                         <p>{{single_workshop.audience}}</p>
                     </div>
                     <div class="blur">
-                         <a href="/news/{{single_workshop.id}}"><div class="edameBut">ادامه مطلب </div></a>
+                         <a href="/news/{{single_workshop.id}}/"><div class="edameBut">ادامه مطلب </div></a>
                     </div>
                 </div>
                 {% endfor %}
