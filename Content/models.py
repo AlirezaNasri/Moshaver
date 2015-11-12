@@ -52,6 +52,9 @@ class Workshop(models.Model):
 	def __str__(self):
 		return self.title
 
+	def __unicode__(self):
+		return self.title.encode('utf-8')
+
 class Grad(models.Model):
 	name = models.CharField(max_length=100)
 	image = models.ForeignKey(ImageContent, null=True, blank=True)
@@ -66,6 +69,10 @@ class Grad(models.Model):
 
 	def __str__(self):
 		return self.name
+
+	def __unicode__(self):
+		return self.name.encode('utf-8')
+
 class Advisor(models.Model):
 	name = models.CharField(max_length=100)
 	image = models.ForeignKey(ImageContent)
@@ -77,6 +84,9 @@ class Advisor(models.Model):
 	def __str__(self):
 		return self.name
 
+	def __unicode__(self):
+		return self.name.encode('utf-8')
+
 class Office(models.Model):
 	tel = models.CharField(max_length=100)
 	address = models.TextField()
@@ -84,6 +94,9 @@ class Office(models.Model):
 
 	def __str__(self):
 		return self.address
+
+	def __unicode__(self):
+		return self.address.encode('utf-8')
 
 class PsyContent(models.Model):
 	title = models.CharField(max_length=100)
@@ -95,6 +108,9 @@ class PsyContent(models.Model):
 
 	def __str__(self):
 		return self.title
+
+	def __unicode__(self):
+		return self.title.encode('utf-8')
 
 class Interview(models.Model):
 	question = models.TextField()
@@ -117,3 +133,6 @@ class EduContent(models.Model):
 
 	def __str__(self):
 		return self.title
+
+	def __unicode__(self):
+		return self.title.encode('utf-8')
