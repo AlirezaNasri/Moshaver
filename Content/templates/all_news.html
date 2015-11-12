@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block contents %}
+	<link rel="stylesheet" href="{% static 'css/All_landscape.css' %}">
+
+	<div class="Category">
+        <div class="space"></div>
+        <h3> اخبار </h3>
+    </div>
+    {% for single_news in news %}
+    <div class="single">
+        <div class="head">
+            <img src="/static/images/{{single_news.title_image}}"/>
+            <h3>{{single_news.title}}</h3>
+        </div>
+        <div class="main">
+            <p>
+            	{{single_news.summary}}
+            </p>
+        </div>
+        <div class="foot">
+            <p>{{single_news.pub_date}}</p>
+            <p>{{single_news.author}}</p>
+            <div class="read-more">
+                <a href="/news/{{single_news.id}}">ادامه مطلب</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    
+    <div id="page-number">
+        <a href="/news/{{next_page}}"><p>صفحه ی بعدی >> </p></a>
+        <a href="/news/{{prev_page}}"><p> << صفحه ی قبلی</p></a>  
+    </div>
+{% endblock %}

@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from Content.models import News, Workshop, PsyContent, Interview, EduContent
 
 
@@ -17,7 +17,7 @@ def get_context(news=[0, 4], psy=[0, 4], edu=[0, 4], work=[0, 1]):
 
 def home_page(req):
 	context = get_context()
-	return render(req, 'tmp.html', context)
+	return render(req, 'home_page.html', context)
 
 def get_all_workshops(req, page=1):
 	context = get_context(work=[page * 10 - 10, page * 10])
@@ -29,9 +29,18 @@ def get_all_psys(req, page=1):
 
 def get_all_news(req, page=1):
 	context = get_context(news=[page * 10 - 10, page * 10])
+	context['next_page'] = page + 1
+	context['prev_page'] = page - 1
 	return render(req, 'all_news.html', context)
 
 def get_all_edus(req, page=1):
 	context = get_context(edu=[page * 10 - 10, page * 10])
 	return render(req, 'all_edus.html', context)
 
+def get_news(req, id):
+	context = get_context()
+	try:
+		context['single_news'] = News.objects.get(id=id)
+	except:
+		return redirect(req, '/news')
+	return render(req, 'single_news.html', context)

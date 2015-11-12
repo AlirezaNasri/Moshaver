@@ -5,7 +5,7 @@ class ImageContent(models.Model):
 	caption = models.TextField(null=True, blank=True)
 
 class FileContent(models.Model):
-	file_field = models.FileField(upload_to='static/images')
+	file_field = models.FileField(upload_to='static')
 	description = models.TextField()
 
 class News(models.Model):
@@ -20,25 +20,25 @@ class News(models.Model):
 class Workshop(models.Model):
 	title = models.CharField(max_length=100)
 	title_image = models.ImageField(upload_to='static/images')
-	images = models.ManyToManyField(ImageContent)
+	images = models.ManyToManyField(ImageContent, null=True, blank=True)
 	summary = models.TextField()
 	body = models.TextField()
 	author = models.CharField(max_length=100)
-	audience = models.TextField()
-	audio = models.FileField(upload_to='static/images')
-	video = models.FileField(upload_to='static/images')
+	audience = models.TextField(null=True, blank=True)
+	audio = models.FileField(upload_to='static', null=True, blank=True)
+	video = models.FileField(upload_to='static', null=True, blank=True)
 	where = models.TextField()
 	when = models.DateTimeField()
 
 class Grad(models.Model):
 	name = models.CharField(max_length=100)
-	image = models.ForeignKey(ImageContent)
+	image = models.ForeignKey(ImageContent, null=True, blank=True)
 	country_rank = models.IntegerField()
 	state_rank = models.IntegerField()
-	major = models.CharField(max_length=100)
+	major = models.CharField(max_length=100, null=True, blank=True)
 	acc_major = models.CharField(max_length=100)
 	year = models.IntegerField()
-	results = models.ImageField(upload_to='static/images')
+	results = models.ImageField(upload_to='static/images', null=True, blank=True)
 	city = models.CharField(max_length=100)
 	school = models.CharField(max_length=100)
 
@@ -69,15 +69,15 @@ class Interview(models.Model):
 	image = models.ImageField(upload_to='static/images')
 	date = models.DateTimeField()
 	grad = models.ForeignKey(Grad)
-	interviewer = models.CharField(max_length=100)
-	header = models.TextField()
-	footer = models.TextField()
+	interviewer = models.CharField(max_length=100, null=True, blank=True)
+	header = models.TextField(null=True, blank=True)
+	footer = models.TextField(null=True, blank=True)
 
 class EduContent(models.Model):
 	title = models.CharField(max_length=100)
-	image = models.ForeignKey(ImageContent)
+	image = models.ForeignKey(ImageContent, null=True, blank=True)
 	pub_date = models.DateTimeField(auto_now=True)
 	summary = models.TextField()
 	body = models.TextField()
 	author = models.CharField(max_length=100)
-	files = models.ManyToManyField(FileContent)
+	files = models.ManyToManyField(FileContent, null=True, blank=True)
