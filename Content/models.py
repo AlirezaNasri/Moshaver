@@ -7,12 +7,18 @@ class ImageContent(models.Model):
 	def __str__(self):
 		return self.caption
 
+	def __unicode__(self):
+		return self.caption.encode('utf-8')
+
 class FileContent(models.Model):
 	file_field = models.FileField(upload_to='static')
 	description = models.TextField()
 
 	def __str__(self):
 		return self.description
+
+	def __unicode__(self):
+		return self.description.encode('utf-8')
 
 class News(models.Model):
 	title = models.CharField(max_length=100)
@@ -25,6 +31,10 @@ class News(models.Model):
 
 	def __str__(self):
 		return self.title
+
+	def __unicode__(self):
+		return self.title.encode('utf-8')
+
 
 class Workshop(models.Model):
 	title = models.CharField(max_length=100)
