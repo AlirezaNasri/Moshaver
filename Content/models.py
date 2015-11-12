@@ -4,6 +4,9 @@ class ImageContent(models.Model):
 	image = models.ImageField(upload_to='static/images')
 	caption = models.TextField(null=True, blank=True)
 
+	def __str__(self):
+		return caption
+
 class FileContent(models.Model):
 	file_field = models.FileField(upload_to='static')
 	description = models.TextField()
