@@ -5,7 +5,7 @@ class ImageContent(models.Model):
 	caption = models.TextField(null=True, blank=True)
 
 	def __str__(self):
-		return caption
+		return self.caption
 
 class FileContent(models.Model):
 	file_field = models.FileField(upload_to='static')
