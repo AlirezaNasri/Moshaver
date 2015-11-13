@@ -136,3 +136,13 @@ class EduContent(models.Model):
 
 	def __unicode__(self):
 		return self.title.encode('utf-8')
+
+class FAQ(models.Model):
+	question = models.TextField()
+	answer = models.TextField()
+
+	def __str__(self):
+		return self.question
+
+	def __unicode__(self):
+		return self.question.encode('utf-8')
