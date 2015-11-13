@@ -8,6 +8,7 @@ def get_context(news=[0, 4], psy=[0, 4], edu=[0, 4], work=[0, 1]):
 	edu_contents = EduContent.objects.all().order_by('-pub_date')[edu[0]:edu[1]]
 	workshops = Workshop.objects.all().order_by('-when')[work[0]:work[1]]
 	billboards = ImageContent.objects.filter(caption='billboard').order_by('-pub_date')
+	faqs = FAQ.objects.all()[:4]
 
 	return {
 		"news": news, 
@@ -15,6 +16,7 @@ def get_context(news=[0, 4], psy=[0, 4], edu=[0, 4], work=[0, 1]):
 		"edu_contents": edu_contents, 
 		"workshops": workshops,
 		"billboards": billboards,
+		"FAQ": faqs,
 	}
 
 def home_page(req):
