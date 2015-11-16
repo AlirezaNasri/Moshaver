@@ -28,15 +28,15 @@
     </div>
     
     <div class="leftPanel">
-        <img class="mainLogo" src="static/images/MainLogo.jpg"/>
+        <img class="mainLogo" src="/static/images/MainLogo.jpg"/>
         <div id="porseshMotedavel">
             <h3>پرسش های متداول</h3>
             <div ID="porseshZigzag"></div>
-            {% for interview in interviews %}
-                <a href="/inerView/{{interview.id}}">
+            {% for ques in FAQ %}
+                <a href="/inerView/{{ques.id}}/">
                     <div class="porsesh">
-                    <h4> {{interview.title}} </h4>
-                    <p> {{interview.text}} </p>
+                    <h4> {{ques.question}} </h4>
+                    <p> {{ques.answer}} </p>
                     </div>
                 </a>
             {% endfor %}

@@ -16,5 +16,5 @@ urlpatterns = patterns('',
     url(r'^news/(\d+)/$', 'Content.views.get_news'),
 	# url(r'^interviews/', 'Content.views.get_all_news',
 	# url(r'^FAQ/', 'Content.views.get_all_news',
-    url(r'', 'Content.views.home_page'),
+    url(r'^$', 'Content.views.home_page'),
 )

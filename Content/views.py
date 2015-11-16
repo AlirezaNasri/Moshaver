@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from Content.models import News, Workshop, PsyContent, Interview, EduContent, ImageContent
+from Content.models import News, Workshop, PsyContent, Interview, EduContent, ImageContent, FAQ
 
 
 def get_context(news=[0, 4], psy=[0, 4], edu=[0, 4], work=[0, 1]):

@@ -4,20 +4,20 @@ class ImageContent(models.Model):
 	image = models.ImageField(upload_to='static/images')
 	caption = models.TextField(null=True, blank=True)
 
-	def __str__(self):
+	def __unicode__(self):
 		return self.caption
 
-	def __unicode__(self):
+	def __str__(self):
 		return self.caption.encode('utf-8')
 
 class FileContent(models.Model):
 	file_field = models.FileField(upload_to='static')
 	description = models.TextField()
 
-	def __str__(self):
+	def __unicode__(self):
 		return self.description
 
-	def __unicode__(self):
+	def __str__(self):
 		return self.description.encode('utf-8')
 
 class News(models.Model):
@@ -30,10 +30,10 @@ class News(models.Model):
 	author = models.CharField(max_length=100)
 
 	def __str__(self):
-		return self.title
+		return self.title.encode('utf-8')
 
 	def __unicode__(self):
-		return self.title.encode('utf-8')
+		return self.title
 
 
 class Workshop(models.Model):
@@ -49,10 +49,10 @@ class Workshop(models.Model):
 	where = models.TextField()
 	when = models.DateTimeField()
 
-	def __str__(self):
+	def __unicode__(self):
 		return self.title
 
-	def __unicode__(self):
+	def __str__(self):
 		return self.title.encode('utf-8')
 
 class Grad(models.Model):
@@ -67,10 +67,10 @@ class Grad(models.Model):
 	city = models.CharField(max_length=100)
 	school = models.CharField(max_length=100)
 
-	def __str__(self):
+	def __unicode__(self):
 		return self.name
 
-	def __unicode__(self):
+	def __str__(self):
 		return self.name.encode('utf-8')
 
 class Advisor(models.Model):
@@ -81,10 +81,10 @@ class Advisor(models.Model):
 	email = models.EmailField()
 	position = models.TextField()
 
-	def __str__(self):
+	def __unicode__(self):
 		return self.name
 
-	def __unicode__(self):
+	def __str__(self):
 		return self.name.encode('utf-8')
 
 class Office(models.Model):
@@ -92,10 +92,10 @@ class Office(models.Model):
 	address = models.TextField()
 	available_times = models.TextField()
 
-	def __str__(self):
+	def __unicode__(self):
 		return self.address
 
-	def __unicode__(self):
+	def __str__(self):
 		return self.address.encode('utf-8')
 
 class PsyContent(models.Model):
@@ -106,10 +106,10 @@ class PsyContent(models.Model):
 	body = models.TextField()
 	author = models.CharField(max_length=100)
 
-	def __str__(self):
+	def __unicode__(self):
 		return self.title
 
-	def __unicode__(self):
+	def __str__(self):
 		return self.title.encode('utf-8')
 
 class Interview(models.Model):
@@ -131,18 +131,18 @@ class EduContent(models.Model):
 	author = models.CharField(max_length=100)
 	files = models.ManyToManyField(FileContent, null=True, blank=True)
 
-	def __str__(self):
+	def __unicode__(self):
 		return self.title
 
-	def __unicode__(self):
+	def __str__(self):
 		return self.title.encode('utf-8')
 
 class FAQ(models.Model):
 	question = models.TextField()
 	answer = models.TextField()
 
-	def __str__(self):
+	def __unicode__(self):
 		return self.question
 
-	def __unicode__(self):
+	def __str__(self):
 		return self.question.encode('utf-8')

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from Content.models import News, ImageContent, Workshop, PsyContent, Interview, EduContent, FAQ
+from Content.models import News, ImageContent, Workshop, PsyContent, Interview, EduContent, FAQ, Office, Advisor, Grad
 
 admin.site.register(News)
 admin.site.register(Workshop)
@@ -8,3 +8,6 @@ admin.site.register(Interview)
 admin.site.register(EduContent)
 admin.site.register(FAQ)
 admin.site.register(ImageContent)
+admin.site.register(Office)
+admin.site.register(Advisor)
+admin.site.register(Grad)
