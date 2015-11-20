@@ -17,5 +17,8 @@ $(document).ready(function(){
     
     $(window).on( 'resize', function () {
         $('#rightH').height($('#rightH').width()/2);
+        $("slidesjs-slide").css({
+            heigh: "100%",
+        });
     }).resize();
 });

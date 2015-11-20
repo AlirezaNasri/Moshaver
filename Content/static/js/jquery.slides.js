@@ -83,6 +83,8 @@
         top: 0,
         left: 0,
         width: "100%",
+        heigh: "100%",
+        color: "blue",
         zIndex: 0,
         display: "none",
         webkitBackfaceVisibility: "hidden"
@@ -203,7 +205,7 @@
         zIndex: 0
       });
       width = $element.width();
-      height = ($("#rightH").height() / $("#rightH").width()) * width;
+      height = ($("#rightH").height());
       this.options.width = width;
       this.options.height = height;
       return $(".slidesjs-control, .slidesjs-container", $element).css({

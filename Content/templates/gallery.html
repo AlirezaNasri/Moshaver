@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block contents %}
+    <link rel="stylesheet" href="{% static '/css/gallery.css' %}">
+    <div class="Category">
+        <div class="space"></div>
+        <h3> گالری عکس </h3>
+    </div>
+    <div class="galeryImages">
+        {% for image in gallery.images %}
+            <img src="/static/images/{{image.image}}" alt="{{ image.caption }}" class="deActive">
+        {% endfor %}
+    </div>    
+    <script src="{% static '/js/gallery.js' %} "></script>
+    <div class="blur"></div>    
+    <div class="imageView">
+        <img>
+        <div ID="A" class="cancelBut button"><i class="fa fa-times"></i></div>
+        <div class="nextBut button"><i class="fa fa-arrow-right"></i></div>
+        <div class="prevBut button"><i class="fa fa-arrow-left"></i></div>
+        <div class="caption"> <p></p></div>
+    </div>
+
+    <div id="page-number">
+        <a href="/news/{{next_page}}"><p>صفحه ی بعدی >> </p></a>
+        <a href="/news/{{prev_page}}"><p> << صفحه ی قبلی </p></a>  
+    </div>
+{% endblock %}

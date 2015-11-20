@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block contents %}
+    <link rel="stylesheet" href="{% static '/css/All_landscape.css' %}">
+    <div class="Category">
+        <div class="space"></div>
+        <h3> کارگاه ها </h3>
+    </div>
+    {% for single_workshop in whorkshops %}
+    <div class="single">
+        <div class="head">
+            <img src="/static/images/{{single_workshop.title_image}}">
+            <h3>{{single_workshop.title}}</h3>
+        </div>
+        <div class="main">
+            <p>
+            	{{single_workshop.summary}}
+            </p>
+        </div>
+            <p>{{single_workshop.where}}</p>
+            <p>{{single_workshop.when}}</p>
+            <p>{{single_workshop.audience}}</p>
+            <div class="read-more">
+                <a href="/worlshops/{{single_workshop.id}}">ادامه مطلب</a>
+            </div>
+        </div>
+    {% endfor %}
+
+    <div id="page-number">
+        <a href="/news/{{next_page}}"><p>صفحه ی بعدی >> </p></a>
+        <a href="/news/{{prev_page}}"><p> << صفحه ی قبلی</p></a>  
+    </div>
+{% endblock %}

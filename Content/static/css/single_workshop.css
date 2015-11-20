@@ -1,0 +1,22 @@
+.Audio p{
+    direction: rtl;
+    display: inline-block;
+    vertical-align: middle;
+    background-color: #118FAD;
+    color: white;
+    padding-right: 5px;
+    padding-left: 6px;
+    margin-left: -6px;
+    z-index: 0;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.Audio audio{
+    display: inline-block;
+    vertical-align: middle;
+    background-color: black;
+    padding: 1px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
