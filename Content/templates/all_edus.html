@@ -12,6 +12,7 @@
  {% for edu_content in edu_contents %}
     <div class="single">
         <div class="head">
+            <img src="/{{edu_content.image}}"/>
             <div class="Tag Edu"> آموزشی </div>
             <h3>{{edu_content.title}}</h3>
         </div>
@@ -32,7 +33,7 @@
                 </div>
             </div>
             <div class="read-more">
-                <a href="/newsNum">ادامه مطلب</a>
+                <a href="/educontent/{{edu_content.id}}">ادامه مطلب</a>
             </div>
         </div>
     </div>
