@@ -9,14 +9,14 @@
         <h3> پرسش های متداول </h3>
     </div>
 
-    {% for FAQ in faqs %}
+    {% for faq in faqs %}
     <div class="single">
         <div class="head">
             <div class="Porsesh Tag"> پرسش متداول </div>
-            <h3>{{FAQ.question}}</h3>
+            <h3>{{faq.question}}</h3>
         </div>
         <div class="main">
-            <p>{{FAQ.answer}}</p>
+            <p>{{faq.answer}}</p>
         </div>
     </div>
     {% endfor %}
