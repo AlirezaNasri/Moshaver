@@ -16,7 +16,7 @@ $(document).ready(function(){
    });
     
     $(window).on( 'resize', function () {
-        $('#rightH').height($('#rightH').width()/2);
+        $('#rightH').height($('#rightH').width()/16*(9.5));
         $("slidesjs-slide").css({
             heigh: "100%",
         });
