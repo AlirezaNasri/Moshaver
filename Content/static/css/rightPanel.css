@@ -70,10 +70,10 @@
 }
 
 .collapsible .dropdown > a {
-   	background: url(/images/arrowdown.png) no-repeat right center;
+   	background: url(/static/images/arrowdown.png) no-repeat right center;
 }
 
 .collapsible .dropdown > a:hover {
-   	background: #F8F8F8 url(/images/arrowdown.png) no-repeat right center !important;
+   	background: #F8F8F8 url(/static/images/arrowdown.png) no-repeat right center !important;
 }
 
