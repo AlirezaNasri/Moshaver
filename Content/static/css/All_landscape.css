@@ -97,12 +97,6 @@
     border-right: solid #EAEAEA 1px;
 }
 
-.single .foot a{
-    margin-right: 10px;
-    padding-right: 10px;
-    color: #F24848;
-}
-
 .single .foot .read-more a{
     display: inline-block;
     text-decoration: none;
@@ -117,6 +111,42 @@
     text-decoration: none;
     color: orange;
     font-size: 1.3em;
+}
+
+.single .foot .download{
+    color:red;
+    display: inline-block;
+}
+
+.single .foot .Files{
+    position: absolute;
+    display: none;
+    background-color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+    top:70%;
+    border: solid 1px #EAEAEA;
+    border-top: solid 1px white;
+    z-index: 2;
+}
+
+.single .foot .download:hover{
+    cursor: pointer;
+}
+
+.single .foot .download:hover .Files{
+    display: block;
+    margin: 0;
+    -webkit-box-shadow: -1px 2px 5px rgba(0,0,0,0.1);
+    -moz-box-shadow: -1px 2px 5px  rgba(0,0,0,0.1);
+    box-shadow: -1px 2px 5px rgba(0,0,0,0.1);
+}
+
+.single .foot .Files a{
+    text-decoration: none;
+    color: #888;
+    display: block;
+    border-bottom: solid 1px #EAEAEA;
 }
 
 #page-number a{

@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block contents %}
+	<link rel="stylesheet" href="{% static 'css/All_landscape.css' %}">
+
+    <div class="Category">
+        <div class="space"></div>
+        <h3> مطالب آموزشی </h3>
+    </div>
+
+ {% for edu_content in edu_contents %}
+    <div class="single">
+        <div class="head">
+            <div class="Tag Edu"> آموزشی </div>
+            <h3>{{edu_content.title}}</h3>
+        </div>
+        <div class="main">
+            <p>
+            	{{edu_content.summary}}
+            </p>
+        </div>
+        <div class="foot">
+            <p>edu_content.pub_date</p>
+            <p>edu_content.author</p>
+            <div class="download">
+                <p>دانلود فایل</p>
+                <div class="Files">
+                    {% for file in edu_content.files %}
+                    <a href="file.file_field"> file.description </a>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="read-more">
+                <a href="/newsNum">ادامه مطلب</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    <div id="page-number">
+        <a href="#"><p>صفحه ی بعدی >> </p></a>
+        <a href="#"><p> << صفحه ی قبلی</p></a>  
+    </div>
+{% endblock %}
