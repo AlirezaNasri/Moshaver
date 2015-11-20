@@ -7,7 +7,10 @@
         <div class="container">
             <div id="slides">
                 {% for billboard in billboards %}
-                <img src="/{{ billboard.image }}">
+                <div class="slider_content">
+                    <img src="/{{ billboard.image }}">
+                    <div class="slider_caption">billboard.caption</div>
+                </div>
                 {% endfor %}
             </div>
         </div>
