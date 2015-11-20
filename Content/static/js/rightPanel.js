@@ -23,27 +23,25 @@ jQuery(document).ready(function(){
 	});
 });
 
-var V = true;
-
 $(document).ready(function() {
     $('#showMenu').click(function() {
-        if(V == true) {
-            var x = $('.contain').width();
-            x += $(window).width()*(0.17);
-            
+        if ($('.rightPanle').is(":visible"))
+        {
             $('.rightPanle').hide();
-            $('.contain').width(x);
-            
-            $(window).trigger('resize');
-            V = false;
         }
-        else{
-            var x = $('.contain').width();
-            x -= $(window).width()*(0.17);
+        else
+        {
             $('.rightPanle').show();
-            $('.contain').width(x);
-            $(window).trigger('resize');
-            V = true; 
         }
+        $(window).trigger('resize');
+    });
+    
+    $(window).on( 'resize', function () {
+        var x = $(window).width();
+        if ($('.leftPanel').is(":visible"))
+            x -= $('.leftPanel').width();
+        if($('.rightPanle').is(":visible"))
+            x -= $('.rightPanle').width();
+        $('.contain').width(x-50);
     });
 });
