@@ -23,7 +23,6 @@
 .slider_caption:hover{
     background-color: rgba(40,40,40,0.8);
 }
-
 .slider_content img{
     width: 100%;
     height: 100%;
@@ -221,7 +220,7 @@
 
     display: flex;
     align-items: center;
-    justify-items: center;
+    justify-content: center;
 }
 
 .singleNews:hover .Ntitr,.singleNews:hover .Nmain, .singleNews:hover .Nfoot{
