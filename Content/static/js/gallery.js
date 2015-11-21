@@ -6,18 +6,22 @@ jQuery(document).ready(function(){
         
         $(".imageView img").attr("src", v.attr("src"));
         $(".imageView p").text(v.attr("alt"));
-        $(".imageView").show("slow");
-        $(".blur").show("slow");
+        $(".imageView").show("300");
+        $(".blur").show("300");
         
     });
     
     $(".cancelBut").on("click", function(){
-        $(".imageView").hide("slow")
-        $(".blur").hide("slow")
+        $(".imageView").hide("300");
+        $(".blur").hide("300");
+    });
+    
+    $(".blur").on("click", function(){
+        $(".imageView").hide("300");
+        $(".blur").hide("300");
     });
     
     $(".nextBut").on("click", function(){
-        
         if(typeof v.next(".galeryImages > img").attr("src") !== 'undefined')
         {
             v = v.next(".galeryImages > img");
