@@ -90,11 +90,15 @@
 .single .foot p:last-child{
     border-right: solid white 1px;
 }
+.single .foot > p{
+    border-right: solid #EAEAEA 1px;
+    margin-right: 10px;
+}
+
 .single .foot p{
     display: inline-block;
-    margin-right: 10px;
     padding-right: 10px;
-    border-right: solid #EAEAEA 1px;
+    vertical-align: middle;
 }
 
 .single .foot .read-more a{
