@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block contents %}
+    <link rel="stylesheet" href="{% static  'css/Offices.css' %}">
+    <div class="Category">
+        <div class="space"></div>
+        <h3> معرفی مشاوران تحصیلی </h3>
+    </div>
+    <div class="single_items">
+        {% for single_advisor in advisors %}
+        <div class="single">
+            <div class="head">
+                <img src="/{{single_advisor.image}}"/>
+                <h3> {{single_advisor.name}}  </h3>
+                <p> مشاور تحصیلی </p>
+            </div>
+            <div class="main">
+                <p> {{single_advisor.licence}} </p>
+            </div>
+            <div class="foot">
+                <p> {{single_advisor.tel}}</p>
+                <p> {{single_advisor.email}} </p>
+                <p> {{single_advisor.position}}  </p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <div id="page-number">
+        <a href="#"><p>صفحه ی بعدی >> </p></a>
+        <a href="#"><p> << صفحه ی قبلی</p></a>  
+    </div>
+{% endblock %}

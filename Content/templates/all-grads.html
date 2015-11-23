@@ -7,8 +7,8 @@
         <div class="space"></div>
         <h3> افتخار افرینان </h3>
     </div>
-    {% for single_grad in grads %}
     <div class="single_items">
+        {% for single_grad in grads %}
         <div class="single">
             <div class="head">
                 <img src="/{{single_grad.image}}"/>
@@ -40,8 +40,10 @@
             </div>
             <a href="#"> <div class="read-more"> مشاهده </div> </a>
         </div>
+        {% endfor %}
     </div>
     <div id="page-number">
         <a href="#"><p>صفحه ی بعدی >> </p></a>
         <a href="#"><p> << صفحه ی قبلی</p></a>  
     </div>
+{% endblock %}
