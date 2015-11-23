@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block contents %}
+    <link rel="stylesheet" href="css/complete.css">
+    <div class="main">
+        <div id="complete">
+             <div class="titr">
+                <img src="/{{single_edu.image}}">
+                <h3>{{single_edu.title}}</h3>
+            </div>
+            <div class="main">
+                <p>
+                    {{single_edu.body}}
+                </p>
+
+                {% for file in single_edu.files %}
+                    <a href="/{{single_edu.file_field}}" style="text-decoration:none;"> {{ single_edu.description }} </a>
+                {% endfor %}
+            </div>
+            <div class="foot">
+                <p>{{single_edu.pub_date}}</p>
+                <p>{{single_edu.author}}</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
