@@ -294,3 +294,13 @@ a .edameBut:hover{
     flex-wrap: wrap;
     justify-content: space-around;
 }
+
+
+@media (max-width: 500px){
+    .singleWorkshop{
+        width: 100%;
+    }
+    .singleNews{
+        width: 100%;
+    }
+}

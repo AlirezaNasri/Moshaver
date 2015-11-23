@@ -29,6 +29,14 @@
     border-bottom: 1px solid #C2e2e2;
 }
 
+.single_items {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items : stretch;
+}
+
 .single {
     position: relative;
     width: 31.8%;
@@ -104,12 +112,11 @@
 /*    color: #B41515;*/
 }
 
-.single .main>p{
+.single .main > p{
     margin-left: 10px;
     margin-right: 10px;
     padding-bottom: 10px;
     margin-bottom: 0;
-    border-bottom: 1px solid #EAEAEA;
     text-align: right;
     color: #000000;
 }
