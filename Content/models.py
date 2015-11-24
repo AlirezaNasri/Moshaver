@@ -58,14 +58,14 @@ class Workshop(models.Model):
 class Grad(models.Model):
 	name = models.CharField(max_length=100)
 	image = models.ForeignKey(ImageContent, null=True, blank=True)
-	country_rank = models.IntegerField()
+	country_rank = models.IntegerField(null=True, blank=True)
 	state_rank = models.IntegerField()
 	major = models.CharField(max_length=100, null=True, blank=True)
 	acc_major = models.CharField(max_length=100)
 	year = models.IntegerField()
 	results = models.ImageField(upload_to='static/images', null=True, blank=True)
-	city = models.CharField(max_length=100)
-	school = models.CharField(max_length=100)
+	city = models.CharField(max_length=100, null=True, blank=True)
+	school = models.CharField(max_length=100, null=True, blank=True)
 
 	def __unicode__(self):
 		return self.name

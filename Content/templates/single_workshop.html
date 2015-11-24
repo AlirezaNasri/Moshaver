@@ -2,14 +2,14 @@
 {% load staticfiles %}
 
 {% block contents %}
-        <link rel="stylesheet" href="{% static '/css/complete.css' %}">
-        <link rel="stylesheet" href="{% static '/css/comments.css' %}">
-        <link rel="stylesheet" href="{% static '/css/single_workshop.css' %}">
+        <link rel="stylesheet" href="{% static 'css/complete.css' %}">
+        <link rel="stylesheet" href="{% static 'css/comments.css' %}">
+        <link rel="stylesheet" href="{% static 'css/single_workshop.css' %}">
         <script src="http://maps.googleapis.com/maps/api/js"></script>
         <script src="{% static '/js/workshop.js' %}"></script>
         <div ID="complete">
             <div class="titr">
-                    <img src="/static/images/{{single_workshop.title_image}}">
+                    <img src="/{{single_workshop.title_image}}">
                     <h3>{{single_workshop.title}}</h3>
             </div>
             <div class="main">
@@ -19,15 +19,15 @@
                 {% for audio in single_workshop.audios %}
                 <div class="Audio">
                     <audio controls>
-                        <source src="/static/Audio/{{audio.audio}}" type="audio/mpeg">
+                        <source src="/{{audio.audio}}" type="audio/mpeg">
                         Your browser does not support the audio element.
                     </audio>
-                    <p>audio.caption</p>
+                    <p>{{audio.caption}}</p>
                 </div>
                 {% endfor %}
-                {% for image in single_workshop.images %}
+                {% for image in single_workshop.images.all %}
                     <div class="Images">
-                        <img src="/static/images/{{image.image}}">
+                        <img src="/{{image.image}}">
                         <p> {{ image.caption }} </p>
                     </div>
                 {% endfor %}

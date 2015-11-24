@@ -46,5 +46,25 @@ def get_news(req, id):
 	try:
 		context['single_news'] = News.objects.get(id=id)
 	except:
-		return redirect(req, '/news')
+		return redirect(req, '/news/')
 	return render(req, 'single_news.html', context)
+
+def get_edu(req, id):
+	context = get_context()
+	try:
+		context['single_edu'] = Edu.objects.get(id=id)
+	except:
+		return redirect(req, '/edu/')
+	return render(req, 'single_edu.html', context)
+
+def get_workshop(req, id):
+	context = get_context()
+	try:
+		context['single_workshop'] = Workshop.objects.get(id=id)
+	except:
+		return redirect(req, '/workshops/')
+	return render(req, 'single_workshop.html', context)
+
+def get_all_faqs(req, page=1):
+	context = get_context()
+	return render(req, 'FAQ.html', context)

@@ -2,7 +2,7 @@
 # Project files
 
 settings.json
-static/*
+static/
 Moshaver/settings.py
 
 ### JetBrains template

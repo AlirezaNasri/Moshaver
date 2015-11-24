@@ -22,14 +22,14 @@
             </p>
         </div>
         <div class="foot">
-            <p>edu_content.pub_date</p>
-            <p>edu_content.author</p>
+            <p>{{edu_content.pub_date}}</p>
+            <p>{{edu_content.author}}</p>
             <div class="download">
                 <i class="fa fa-caret-down"></i>
                 <p>دریافت فایل</p>
                 <div class="Files">
-                    {% for file in edu_content.files %}
-                    <a href="file.file_field"> file.description </a>
+                    {% for file in edu_content.files.all %}
+                    <a href="file.file_field"> {{file.description}} </a>
                     {% endfor %}
                 </div>
             </div>
