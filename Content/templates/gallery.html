@@ -2,17 +2,17 @@
 {% load staticfiles %}
 
 {% block contents %}
-    <link rel="stylesheet" href="{% static '/css/gallery.css' %}">
+    <link rel="stylesheet" href="{% static 'css/gallery.css' %}">
     <div class="Category">
         <div class="space"></div>
         <h3> گالری عکس </h3>
     </div>
     <div class="galeryImages">
-        {% for image in gallery.images %}
+        {% for image in gallery %}
             <img src="/static/images/{{image.image}}" alt="{{ image.caption }}" class="deActive">
         {% endfor %}
     </div>    
-    <script src="{% static '/js/gallery.js' %} "></script>
+    <script src="{% static 'js/gallery.js' %} "></script>
     <div class="blur"></div>    
     <div class="imageView">
         <img>
@@ -23,7 +23,7 @@
     </div>
 
     <div id="page-number">
-        <a href="/news/{{next_page}}"><p>صفحه ی بعدی >> </p></a>
-        <a href="/news/{{prev_page}}"><p> << صفحه ی قبلی </p></a>  
+        <a href="/gallery/?&page={{next_page}}"><p>صفحه ی بعدی >> </p></a>
+        <a href="/gallery/?&page={{prev_page}}"><p> << صفحه ی قبلی </p></a>  
     </div>
 {% endblock %}

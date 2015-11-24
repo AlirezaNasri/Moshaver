@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from Content.models import News, Workshop, PsyContent, Interview, EduContent, ImageContent, FAQ
+from Content.models import News, Workshop, PsyContent, Interview, EduContent, ImageContent, FAQ, Grad, Advisor
 
 
 def get_context(news=[0, 4], psy=[0, 4], edu=[0, 4], work=[0, 1]):
@@ -23,23 +23,50 @@ def home_page(req):
 	context = get_context()
 	return render(req, 'home_page.html', context)
 
-def get_all_workshops(req, page=1):
+def get_all_workshops(req):
+	page = 1
+	if 'page' in req.GET:
+		page = int(req.GET['page'])
 	context = get_context(work=[page * 10 - 10, page * 10])
+	context['next_page'] = page + 1
+	context['prev_page'] = page - 1
 	return render(req, 'all_workshops.html', context)
 
-def get_all_psys(req, page=1):
+def get_all_psys(req):
+	page = 1
+	if 'page' in req.GET:
+		page = int(req.GET['page'])
 	context = get_context(psy=[page * 10 - 10, page * 10])
+	context['next_page'] = page + 1
+	context['prev_page'] = page - 1
 	return render(req, 'all_psys.html', context)	
 
-def get_all_news(req, page=1):
+def get_all_news(req):
+	page = 1
+	if 'page' in req.GET:
+		page = int(req.GET['page'])
 	context = get_context(news=[page * 10 - 10, page * 10])
 	context['next_page'] = page + 1
 	context['prev_page'] = page - 1
 	return render(req, 'all_news.html', context)
 
-def get_all_edus(req, page=1):
+def get_all_edus(req):
+	page = 1
+	if 'page' in req.GET:
+		page = int(req.GET['page'])
 	context = get_context(edu=[page * 10 - 10, page * 10])
+	context['next_page'] = page + 1
+	context['prev_page'] = page - 1
 	return render(req, 'all_edus.html', context)
+
+def get_all_faqs(req):
+	page = 1
+	if 'page' in req.GET:
+		page = int(req.GET['page'])
+	context = get_context()
+	context['next_page'] = page + 1
+	context['prev_page'] = page - 1
+	return render(req, 'FAQ.html', context)
 
 def get_news(req, id):
 	context = get_context()
@@ -65,6 +92,34 @@ def get_workshop(req, id):
 		return redirect(req, '/workshops/')
 	return render(req, 'single_workshop.html', context)
 
-def get_all_faqs(req, page=1):
+def get_psy(req, id):
 	context = get_context()
-	return render(req, 'FAQ.html', context)
+	try:
+		context['single_psy'] = PsyContent.objects.get(id=id)
+	except:
+		return redirect(req, '/psychology/')
+	return render(req, 'single_psy.html', context)	
+
+def get_all_advisors(req):
+	context = get_context()
+	context['advisors'] = Advisor.objects.all()
+	return render(req, 'all_advisors.html', context)	
+
+def get_all_grads(req):
+	context = get_context()
+	context['grads'] = Grad.objects.all()
+	return render(req, 'all_grads.html', context)		
+
+def get_gallery(req):
+	page = 1
+	if 'page' in req.GET:
+		page = int(req.GET['page'])
+	context = get_context()
+	context['gallery'] = ImageContent.objects.filter(caption='gallery')[page * 10 - 10: page * 10]
+	context['next_page'] = page + 1
+	context['prev_page'] = page - 1
+	return render(req, 'gallery.html', context)	
+
+
+
+

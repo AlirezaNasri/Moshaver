@@ -31,10 +31,9 @@
             <h3>پرسش های متداول</h3>
             <div ID="porseshZigzag"></div>
             {% for ques in FAQ %}
-                <a href="/inerView/{{ques.id}}/">
+                <a href="/faq/">
                     <div class="porsesh">
-                    <h4> {{ques.question}} </h4>
-                    <p> {{ques.answer}} </p>
+                        <h4> {{ques.question}} </h4>
                     </div>
                 </a>
             {% endfor %}
@@ -44,7 +43,7 @@
             <h3>مطالب روانشناسی</h3>
             <div ID="ravanshenasiZigzag"></div>
             {% for psy_content in psy_contents %}
-                <a href="/psy_contents/{{psy_content.id}}"><p class="ravanshenasi">{{psy_content.title}}</p></a>
+                <a href="/psychology/{{psy_content.id}}"><p class="ravanshenasi">{{psy_content.title}}</p></a>
             {% endfor %}
         </div>
         
@@ -52,7 +51,7 @@
             <h3>محتوای آموزشی</h3>
             <div ID="amoozeshiZigzag"></div>
             {% for edu_content in edu_contents %}
-                <a href="/edu_contents/{{edu_content.id}}"><p class="amoozeshi">{{edu_content.title}}</p></a>
+                <a href="/edu/{{edu_content.id}}"><p class="amoozeshi">{{edu_content.title}}</p></a>
             {% endfor %}
         </div>
     </div>
@@ -66,25 +65,20 @@
             <!--li class="header"><input type="text" name="search" id="search" placeholder="Search"/></li-->
             <li><a class='' href='/news'>اخبار</a></li>
             <li><a href='/workshops'>کارگاه ها</a></li>
-            <li class='dropdown'><a href='/FAQ'> پرسش هاي متداول</a>
-            <ul>
-                <li ><a href='#'>موضوع اول</a></li>
-                <li ><a href='#'>موضوع دوم</a></li>
-            </ul>
-            </li>
+            <li><a href='/faq/'> پرسش هاي متداول</a></li>
             <li><a href='/interviews'>مصاحبه با رتبه هاي برتر</a></li>  
             <li><a href='/psychology'>مطالب روانشناسي</a></li>
             <li><a href='/edu'>محتواي آموزشي</a></li>  
             <li class='dropdown'><a href='#'>درباره ي ما</a>
             <ul>
                 <li ><a href='#'>معرفي دفاتر</a></li>
-                <li ><a href='#'>معرفي مشاوران تحصيلي</a></li>
+                <li ><a href='/advisors/'>معرفي مشاوران تحصيلي</a></li>
                 <li ><a href='#'>معرفي مشاوران باليني</a></li>
                 <li ><a href='#'>معرفي مشاوران اموزشي</a></li>
             </ul>
             </li>
-            <li><a href='#'>افتخار آفرينان</a></li>  
-            <li><a href='/gallery'>گالری عکس</a></li>
+            <li><a href='/graduates/'>افتخار آفرينان</a></li>  
+            <li><a href='/gallery/'>گالری عکس</a></li>
 <!--            <script>
                 $('.collapsible').children('li').last().css({ borderBottomColor:"#f1f2f2"});
             </script>-->
