@@ -8,21 +8,21 @@
         <div class="space"></div>
         <h3> مطالب روانشناسی </h3>
     </div>
-{% for single_psycontent in psycontent %}
+    {% for psy_content in psy_contents %}
     <div class="single">
         <div class="head">
-            <img src="{{single_psycontent.image}}"/>
+            <img src="{{psy_content.image}}"/>
             <div class="Tag Psyco"> روانشناسی </div>
-            <h3>{{single_psycontent.title}}</h3>
+            <h3>{{psy_content.title}}</h3>
         </div>
         <div class="main">
             <p>
-                {{single_psycontent.summery}}
+                {{psy_content.summery}}
             </p>
         </div>
         <div class="foot">
-            <p>{{single_psycontent.pub_date}}</p>
-            <p>{{single_psycontent.author}}</p>
+            <p>{{psy_content.pub_date}}</p>
+            <p>{{psy_content.author}}</p>
             <div class="read-more">
                 <a href="/psycontent/{{single_psycontent.id}}">ادامه مطلب</a>
             </div>

@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block contents %}
+    <link rel="stylesheet" href="{% static 'css/all_vertical.css' %}">
+    <div class="Category">
+        <div class="space"></div>
+        <h3> افتخار افرینان </h3>
+    </div>
+    <div class="single_items">
+        {% for single_grad in grads %}
+        <div class="single">
+            <div class="head">
+                <img src="/{{single_grad.image}}"/>
+            </div>
+            <div class="main">
+                <h3> {{single_grad.name}} </h3>
+                <div class="details">
+                    <div>
+                        <p>رتبه منطقه</p>
+                        <p>{{ single_grad.state_rank }}</p>
+                    </div>
+
+                    <div class="space"></div>
+
+                    <div>
+                        <p>سال</p>
+                        <p>{{ single_grad.year }}</p>
+                    </div>
+
+                    <div class="space"></div>
+
+                    <div>
+                        <p>رشته</p>
+                        <p>{{ single_grad.major }}</p>
+                    </div>
+                </div>
+                <p> {{ single_grad.acc_major }} </p>
+<!--                <p>علامه طباطبایی</p>-->
+            </div>
+            <a href="#"> <div class="read-more"> مشاهده </div> </a>
+        </div>
+        {% endfor %}
+    </div>
+    <div id="page-number">
+        <a href="#"><p>صفحه ی بعدی >> </p></a>
+        <a href="#"><p> << صفحه ی قبلی</p></a>  
+    </div>
+{% endblock %}
