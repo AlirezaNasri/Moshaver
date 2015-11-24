@@ -9,7 +9,7 @@
     </div>
     <div class="galeryImages">
         {% for image in gallery %}
-            <img src="/static/images/{{image.image}}" alt="{{ image.caption }}" class="deActive">
+            <img src="/{{image.image}}" alt="{{ image.caption }}" class="deActive">
         {% endfor %}
     </div>    
     <script src="{% static 'js/gallery.js' %} "></script>
