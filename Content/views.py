@@ -7,7 +7,6 @@ def get_context(news=[0, 4], psy=[0, 4], edu=[0, 4], work=[0, 1]):
 	psy_contents = PsyContent.objects.all().order_by('-pub_date')[psy[0]:psy[1]]
 	edu_contents = EduContent.objects.all().order_by('-pub_date')[edu[0]:edu[1]]
 	workshops = Workshop.objects.all().order_by('-when')[work[0]:work[1]]
-	faqs = FAQ.objects.all()[:4]
 	billboards = ImageContent.objects.filter(caption='billboard')
 
 	return {
@@ -16,7 +15,6 @@ def get_context(news=[0, 4], psy=[0, 4], edu=[0, 4], work=[0, 1]):
 		"edu_contents": edu_contents, 
 		"workshops": workshops,
 		"billboards": billboards,
-		"FAQ": faqs,
 	}
 
 def home_page(req):
@@ -64,6 +62,7 @@ def get_all_faqs(req):
 	if 'page' in req.GET:
 		page = int(req.GET['page'])
 	context = get_context()
+	context['FAQ'] = FAQ.objects.all()[page * 10 - 10: page * 10]
 	context['next_page'] = page + 1
 	context['prev_page'] = page - 1
 	return render(req, 'FAQ.html', context)
