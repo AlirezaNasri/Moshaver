@@ -9,7 +9,7 @@ def get_context(news=[0, 4], psy=[0, 4], edu=[0, 4], work=[0, 1]):
 	workshops = Workshop.objects.all().order_by('-when')[work[0]:work[1]]
 	billboards = ImageContent.objects.filter(caption='billboard')
 	faqs = FAQ.objects.all()[:4]
-	
+
 	return {
 		"news": news, 
 		"psy_contents": psy_contents, 
@@ -70,6 +70,7 @@ def get_all_faqs(req):
 	return render(req, 'FAQ.html', context)
 
 def get_news(req, id):
+	id = int(id)
 	context = get_context()
 	try:
 		context['single_news'] = News.objects.get(id=id)
@@ -78,14 +79,16 @@ def get_news(req, id):
 	return render(req, 'single_news.html', context)
 
 def get_edu(req, id):
+	id = int(id)
 	context = get_context()
 	try:
-		context['single_edu'] = Edu.objects.get(id=id)
+		context['single_edu'] = EduContent.objects.get(id=1)
 	except:
 		return redirect(req, '/edu/')
 	return render(req, 'single_edu.html', context)
 
 def get_workshop(req, id):
+	id = int(id)
 	context = get_context()
 	try:
 		context['single_workshop'] = Workshop.objects.get(id=id)
@@ -94,6 +97,7 @@ def get_workshop(req, id):
 	return render(req, 'single_workshop.html', context)
 
 def get_psy(req, id):
+	id = int(id)
 	context = get_context()
 	try:
 		context['single_psy'] = PsyContent.objects.get(id=id)

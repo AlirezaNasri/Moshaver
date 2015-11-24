@@ -14,7 +14,7 @@
                     {{single_edu.body}}
                 </p>
 
-                {% for file in single_edu.files %}
+                {% for file in single_edu.files.all %}
                     <a href="/{{single_edu.file_field}}" style="text-decoration:none;"> {{ single_edu.description }} </a>
                 {% endfor %}
             </div>
