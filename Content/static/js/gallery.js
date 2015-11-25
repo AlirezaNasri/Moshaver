@@ -1,7 +1,7 @@
 var v;
 
 jQuery(document).ready(function(){
-    $("img").on("click", function(){
+    $(".contain .deActive").on("click", function(){
         v = $(this);
         
         $(".imageView img").attr("src", v.attr("src"));
@@ -49,4 +49,47 @@ jQuery(document).ready(function(){
         $(".imageView img").attr("src", v.attr("src"));
         $(".imageView p").text(v.attr("alt"));
     });
+    
+    var theElement = document.getElementById(".imageView");
+    var Touch;
+
+    theElement.addEventListener("touchstart", start);
+    theElement.addEventListener("touchend", end);
+
+    function start(event) {
+        Touch = event.pageX;
+        alert("hi");
+    }
+    
+    function end(event) {
+        Touch = event.pageX - Touch;
+        if(Touch < -10)
+            {
+                if(typeof v.prev(".galeryImages > img").attr("src") !== 'undefined')
+                {
+                    v = v.prev(".galeryImages > img");
+                }
+                else
+                {
+                    v = $(".galeryImages > img").last();
+                }
+
+                $(".imageView img").attr("src", v.attr("src"));
+                $(".imageView p").text(v.attr("alt"));
+            }
+        else if (Touch > 10)
+            {
+                if(typeof v.next(".galeryImages > img").attr("src") !== 'undefined')
+                {
+                    v = v.next(".galeryImages > img");
+                }
+                else
+                {
+                    v = $(".galeryImages > img").first();
+                }
+
+                $(".imageView img").attr("src", v.attr("src"));
+                $(".imageView p").text(v.attr("alt"));
+            }
+    }
 });
