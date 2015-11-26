@@ -2,17 +2,16 @@
 {% load staticfiles %}
 
 {% block contents %}
-    <link rel="stylesheet" href="css/complete.css">
-    <link rel="stylesheet" href="css/comments.css">
+    <link rel="stylesheet" href="{% static 'css/complete.css' %}">
     <div class="main">
         <div id="complete">
              <div class="titr">
-                <img src="/{{single_psy.image}}">
+                <img src="/{{single_psy.image.image}}">
                 <h3>{{single_psy.title}}</h3>
             </div>
             <div class="main">
                 <p>
-                    {{single_news.body}}
+                    {{single_psy.body}}
                 </p>
             </div>
             <div class="foot">

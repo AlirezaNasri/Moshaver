@@ -2,11 +2,11 @@
 {% load staticfiles %}
 
 {% block contents %}
-    <link rel="stylesheet" href="css/complete.css">
+    <link rel="stylesheet" href="{% static 'css/complete.css' %}">
     <div class="main">
         <div id="complete">
              <div class="titr">
-                <img src="/{{single_edu.image}}">
+                <img src="/{{single_edu.image.image}}">
                 <h3>{{single_edu.title}}</h3>
             </div>
             <div class="main">
