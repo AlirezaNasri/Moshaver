@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+1;95;0c{% extends 'base.html' %}
 {% load staticfiles %}
 
 {% block contents %}
@@ -12,7 +12,7 @@
  {% for edu_content in edu_contents %}
     <div class="single">
         <div class="head">
-            <img src="/{{edu_content.image}}"/>
+            <img src="/{{edu_content.image.image}}"/>
             <div class="Tag Edu"> آموزشی </div>
             <h3>{{edu_content.title}}</h3>
         </div>
@@ -34,7 +34,7 @@
                 </div>
             </div>
             <div class="read-more">
-                <a href="/educontent/{{edu_content.id}}">ادامه مطلب</a>
+                <a href="/edu/{{edu_content.id}}">ادامه مطلب</a>
             </div>
         </div>
     </div>
