@@ -241,14 +241,14 @@ a:visited {
 
 
 .collapsible .dropdown > a{
-   	background-image: url("/images/arrowdown.png") ;
+   	background-image: url("/static/images/arrowdown.png") ;
      background-size: 10%;
     background-repeat: no-repeat;
     background-position: left center;
 }
 
 .collapsible .dropdown > a:hover {
-   	background-image: url("/images/arrowleft.png") ;
+   	background-image: url("/static/images/arrowleft.png") ;
     background-size: 10%;
     background-repeat: no-repeat;
     background-position: left center;
