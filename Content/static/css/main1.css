@@ -122,7 +122,7 @@
     padding-left: 15px;
     padding-right: 15px;
     color:#404040;
-    margin-bottom: 70px;
+    margin-bottom: 100px;
 }
 
 .singleNews .Nfoot {
@@ -137,12 +137,14 @@
 
 .singleNews .Nfoot :first-child{
     display: inline-block;
+    margin: 0;
     margin-right: 10px;
     padding-right: 10px;
     border-right: solid #EAEAEA 1px;
 }
 
 .singleNews .Nfoot :last-child{
+    margin: 0;
     display: inline-block;
 }
 
@@ -183,7 +185,7 @@
     padding-left: 15px;
     padding-right: 15px;
     color:#404040;
-    margin-bottom: 70px;
+    margin-bottom: 100px;
 }
 
 .singleWorkshop .Wfoot {
@@ -198,6 +200,7 @@
 
 .singleWorkshop .Wfoot p{
     display: inline-block;
+    margin: 0;
     margin-right: 10px;
     padding-right: 10px;
     border-right: solid #EAEAEA 1px;
