@@ -54,7 +54,7 @@
     background-color: #F2D700;
 }
 
-#porseshMotedavel h4{
+#porseshMotedavel p{
     position: relative;
     margin: 4px;
     margin-right: 9px;
@@ -69,6 +69,7 @@
     LEFT:2%;
     width: 96%;
     border-bottom: solid #F2D701 1px;
+	margin-right: 9px;
 }
 
 #porseshMotedavel a:last-child .porsesh{
