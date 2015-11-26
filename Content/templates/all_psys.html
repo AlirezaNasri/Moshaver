@@ -11,7 +11,7 @@
     {% for psy_content in psy_contents %}
     <div class="single">
         <div class="head">
-            <img src="{{psy_content.image}}"/>
+            <img src="/{{psy_content.image.image}}"/>
             <div class="Tag Psyco"> روانشناسی </div>
             <h3>{{psy_content.title}}</h3>
         </div>
@@ -24,7 +24,7 @@
             <p>{{psy_content.pub_date}}</p>
             <p>{{psy_content.author}}</p>
             <div class="read-more">
-                <a href="/psycontent/{{single_psycontent.id}}">ادامه مطلب</a>
+                <a href="/psychology/{{psy_content.id}}">ادامه مطلب</a>
             </div>
         </div>
     </div>
