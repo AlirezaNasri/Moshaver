@@ -57,7 +57,7 @@
 #porseshMotedavel p{
     position: relative;
     margin: 4px;
-    margin-right: 9px;
+    margin-right: 3%;
 }
 
 #porseshMotedavel a:hover{
@@ -69,7 +69,7 @@
     LEFT:2%;
     width: 96%;
     border-bottom: solid #F2D701 1px;
-	margin-right: 9px;
+	margin-right: 3%;
 }
 
 #porseshMotedavel a:last-child .porsesh{
@@ -121,7 +121,7 @@ top:-20px;
     position: relative;
     LEFT:2%;
     width: 96%;
-    margin-right: 9px;
+    margin-right: 3%;
     border-bottom: solid #68BED2 1px;
 }
 
@@ -169,7 +169,7 @@ top:-20px;
     position: relative;
     LEFT:2%;
     width: 96%;
-    margin-right: 9px;
+    margin-right: 3%;
     border-bottom: solid #D26868 1px;
 }
 
