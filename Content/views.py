@@ -124,7 +124,3 @@ def get_gallery(req):
 	context['next_page'] = page + 1
 	context['prev_page'] = page - 1
 	return render(req, 'gallery.html', context)	
-
-
-
-

@@ -59,7 +59,7 @@ class Grad(models.Model):
 	name = models.CharField(max_length=100)
 	image = models.ForeignKey(ImageContent, null=True, blank=True)
 	country_rank = models.IntegerField(null=True, blank=True)
-	state_rank = models.IntegerField()
+	state_rank = models.IntegerField(null=True, blank=True)
 	major = models.CharField(max_length=100, null=True, blank=True)
 	acc_major = models.CharField(max_length=100)
 	year = models.IntegerField()
