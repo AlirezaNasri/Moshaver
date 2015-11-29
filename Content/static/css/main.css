@@ -26,6 +26,7 @@ pre {
     word-wrap: break-word;       /* Internet Explorer 5.5+ */
 	font-family: "BRoya";
     direction: rtl;
+	text-align:right;
 }	
 
 .header {
