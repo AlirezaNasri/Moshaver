@@ -37,14 +37,15 @@ def get_all_psys(req):
 	page = 1
 	if 'page' in req.GET:
 		page = int(req.GET['page'])
-	context = get_context(page + 1 if len(Workshop.objects.all()) > page * 10 else None, page - 1 if page != 1 else None)	context['main_psy_contents'] = PsyContent.objects.all().order_by('-pub_date')[page * 10 - 10:page * 10]
+	context = get_context(page + 1 if len(Workshop.objects.all()) > page * 10 else None, page - 1 if page != 1 else None)	
+	context['main_psy_contents'] = PsyContent.objects.all().order_by('-pub_date')[page * 10 - 10:page * 10]
 	return render(req, 'all_psys.html', context)	
 
 def get_all_news(req):
 	page = 1
 	if 'page' in req.GET:
 		page = int(req.GET['page'])
-	context = get_context(page + 1 if len(Workshop.objects.all()) > page * 10 else None, page - 1 if page != 1 else None)
+	context = get_context(page + 1 if len(News.objects.all()) > page * 10 else None, page - 1 if page != 1 else None)
 	context['main_news'] = News.objects.all().order_by('-pub_date')[page * 10 - 10:page * 10]
 	return render(req, 'all_news.html', context)
 
@@ -52,7 +53,7 @@ def get_all_edus(req):
 	page = 1
 	if 'page' in req.GET:
 		page = int(req.GET['page'])
-	context = get_context(page + 1 if len(Workshop.objects.all()) > page * 10 else None, page - 1 if page != 1 else None)
+	context = get_context(page + 1 if len(EduContent.objects.all()) > page * 10 else None, page - 1 if page != 1 else None)
 	context['main_edu_contents'] = EduContent.objects.all().order_by('-pub_date')[page * 10 - 10:page * 10]
 	return render(req, 'all_edus.html', context)
 
@@ -60,7 +61,7 @@ def get_all_faqs(req):
 	page = 1
 	if 'page' in req.GET:
 		page = int(req.GET['page'])
-	context = get_context(page + 1 if len(Workshop.objects.all()) > page * 10 else None, page - 1 if page != 1 else None)
+	context = get_context(page + 1 if len(FAQ.objects.all()) > page * 10 else None, page - 1 if page != 1 else None)
 	context['main_faq'] = FAQ.objects.all().order_by('-pub_date')[page * 10 - 10:page * 10]
 	return render(req, 'FAQ.html', context)
 
