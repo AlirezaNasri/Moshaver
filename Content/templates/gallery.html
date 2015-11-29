@@ -24,7 +24,12 @@
     </div>
 
     <div id="page-number">
-        <a href="/gallery/?&page={{next_page}}"><p>صفحه ی بعدی >> </p></a>
-        <a href="/gallery/?&page={{prev_page}}"><p> << صفحه ی قبلی </p></a>  
+        {% if next_page %}
+        <a href="/edu/?&page={{next_page}}"><p>صفحه ی بعدی >> </p></a>
+        {% endif %}
+        
+        {% if prev_page %}
+        <a href="/edu/?&page={{prev_page}}"><p> << صفحه ی قبلی</p></a> 
+        {% endif %}
     </div>
 {% endblock %}
