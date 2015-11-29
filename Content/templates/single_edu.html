@@ -11,9 +11,7 @@
                 <h3>{{single_edu.title}}</h3>
             </div>
             <div class="main">
-                <pre>
-                    {{single_edu.body}}
-                </pre>
+                <pre>{{single_edu.body}}</pre>
 
                 {% for file in single_edu.files.all %}
                     <a href="/{{single_edu.file_field}}" style="text-decoration:none;"> {{ single_edu.description }} </a>
