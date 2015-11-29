@@ -10,30 +10,30 @@
         <h3> مطالب آموزشی </h3>
     </div>
 
- {% for main_edu_content in edu_contents %}
+ {% for single_edu_content in main_edu_contents %}
     <div class="single">
         <div class="head">
-            <img src="/{{edu_content.image.image}}"/>
+            <img src="/{{single_edu_content.image.image}}"/>
             <div class="Tag Edu"> آموزشی </div>
-            <h3>{{main_edu_content.title}}</h3>
+            <h3>{{single_edu_content.title}}</h3>
         </div>
         <div class="main">
-            <pre>{{main_edu_content.summary}}</pre>
+            <pre>{{single_edu_content.summary}}</pre>
         </div>
         <div class="foot">
-            <p>{{main_edu_content.pub_date|date:"Y-m-d"|jalali}}</p>
-            <p>{{main_edu_content.author}}</p>
+            <p>{{single_edu_content.pub_date|date:"Y-m-d"|jalali}}</p>
+            <p>{{single_edu_content.author}}</p>
             <div class="download">
                 <i class="fa fa-caret-down"></i>
                 <p>دریافت فایل</p>
                 <div class="Files">
-                    {% for file in main_edu_content.files.all %}
+                    {% for file in single_edu_content.files.all %}
                     <a href="file.file_field"> {{file.description}} </a>
                     {% endfor %}
                 </div>
             </div>
             <div class="read-more">
-                <a href="/edu/{{edu_content.id}}">ادامه مطلب</a>
+                <a href="/edu/{{single_edu_content.id}}">ادامه مطلب</a>
             </div>
         </div>
     </div>

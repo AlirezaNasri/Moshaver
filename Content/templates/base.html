@@ -29,9 +29,9 @@
     <div class="leftPanel">
         <img class="mainLogo" src="/static/images/MainLogo.jpg"/>
         <div id="porseshMotedavel">
-            <h3>پرسش های متداول</h3>
+            <a href="/faq/"><h3>پرسش های متداول</h3></a>
             <div ID="porseshZigzag"></div>
-            {% for ques in FAQ %}
+            {% for ques in faq %}
                 <a href="/faq/">
                     <div class="porsesh">
                         <p> {{ques.question}} </p>
@@ -41,7 +41,7 @@
         </div>
         
         <div id="matalebRavanshenasi">
-            <h3>مطالب روانشناسی</h3>
+            <a href="/psychology"><h3>مطالب روانشناسی</h3></a>
             <div ID="ravanshenasiZigzag"></div>
             {% for psy_content in psy_contents %}
                 <a href="/psychology/{{psy_content.id}}"><p class="ravanshenasi">{{psy_content.title}}</p></a>
@@ -49,7 +49,7 @@
         </div>
         
         <div id="mohtavaAmoozeshi">
-            <h3>محتوای آموزشی</h3>
+            <a href="/edu"><h3>محتوای آموزشی</h3></a>
             <div ID="amoozeshiZigzag"></div>
             {% for edu_content in edu_contents %}
                 <a href="/edu/{{edu_content.id}}"><p class="amoozeshi">{{edu_content.title}}</p></a>
