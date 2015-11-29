@@ -32,16 +32,18 @@ $(document).ready(function() {
         else
         {
             $('.rightPanle').show();
+            $('.rightPanle').css("display", "inline-block");
         }
         $(window).trigger('resize');
     });
     
     $(window).on( 'resize', function () {
-        var x = $(window).width();
+        var x = $('body').width();
         if ($('.leftPanel').is(":visible"))
-            x -= $('.leftPanel').width();
+            x -= $('.leftPanel').outerWidth();
         if($('.rightPanle').is(":visible"))
-            x -= $('.rightPanle').width();
-        $('.contain').width(x-50);
+            x -= $('.rightPanle').outerWidth();
+        $('.contain').width(x-30);
     });
 });
+
