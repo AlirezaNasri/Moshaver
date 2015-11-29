@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from Content.models import News, Workshop, PsyContent, Interview, EduContent, ImageContent, FAQ, Grad, Advisor
 
 
-def get_context():
+def get_context(page=1):
 	news = News.objects.all().order_by('-pub_date')[:4]
 	psy_contents = PsyContent.objects.all().order_by('-pub_date')[:4]
 	edu_contents = EduContent.objects.all().order_by('-pub_date')[:4]
@@ -17,6 +17,8 @@ def get_context():
 		"workshops": workshops,
 		"billboards": billboards,
 		"faq": faqs,
+		"next_page": page + 1,
+		"prev_page": page - 1,
 	}
 
 def home_page(req):
@@ -27,47 +29,40 @@ def get_all_workshops(req):
 	page = 1
 	if 'page' in req.GET:
 		page = int(req.GET['page'])
-	context = get_context(pagework=[page * 10 - 10, page * 10])
+	context = get_context(page)
 	context['main_workshops'] = Workshop.objects.all().order_by('-when')[page * 10 - 10:page * 10]
-	context['next_page'] = page + 1
-	context['prev_page'] = page - 1
 	return render(req, 'all_workshops.html', context)
 
 def get_all_psys(req):
 	page = 1
 	if 'page' in req.GET:
 		page = int(req.GET['page'])
-	context = get_context(psy=[page * 10 - 10, page * 10])
-	context['next_page'] = page + 1
-	context['prev_page'] = page - 1
+	context = get_context(page)
+	context['main_psy_contents'] = PsyContent.objects.all().order_by('-pub_date')[page * 10 - 10:page * 10]
 	return render(req, 'all_psys.html', context)	
 
 def get_all_news(req):
 	page = 1
 	if 'page' in req.GET:
 		page = int(req.GET['page'])
-	context = get_context(news=[page * 10 - 10, page * 10])
-	context['next_page'] = page + 1
-	context['prev_page'] = page - 1
+	context = get_context(page)
+	context['main_news'] = News.objects.all().order_by('-pub_date')[page * 10 - 10:page * 10]
 	return render(req, 'all_news.html', context)
 
 def get_all_edus(req):
 	page = 1
 	if 'page' in req.GET:
 		page = int(req.GET['page'])
-	context = get_context(edu=[page * 10 - 10, page * 10])
-	context['next_page'] = page + 1
-	context['prev_page'] = page - 1
+	context = get_context(page)
+	context['main_edu_contents'] = EduContent.objects.all().order_by('-pub_date')[page * 10 - 10:page * 10]
 	return render(req, 'all_edus.html', context)
 
 def get_all_faqs(req):
 	page = 1
 	if 'page' in req.GET:
 		page = int(req.GET['page'])
-	context = get_context()
-	context['FAQ'] = FAQ.objects.all()[page * 10 - 10: page * 10]
-	context['next_page'] = page + 1
-	context['prev_page'] = page - 1
+	context = get_context(page)
+	context['main_faq'] = FAQ.objects.all().order_by('-pub_date')[page * 10 - 10:page * 10]
 	return render(req, 'FAQ.html', context)
 
 def get_news(req, id):
@@ -120,8 +115,6 @@ def get_gallery(req):
 	page = 1
 	if 'page' in req.GET:
 		page = int(req.GET['page'])
-	context = get_context()
+	context = get_context(page)
 	context['gallery'] = ImageContent.objects.filter(caption='gallery')[page * 10 - 10: page * 10]
-	context['next_page'] = page + 1
-	context['prev_page'] = page - 1
 	return render(req, 'gallery.html', context)	
