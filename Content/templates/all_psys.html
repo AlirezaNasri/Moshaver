@@ -9,21 +9,21 @@
         <div class="space"></div>
         <h3> مطالب روانشناسی </h3>
     </div>
-    {% for main_psy_content in psy_contents %}
+    {% for single_psy_content in main_psy_contents %}
     <div class="single">
         <div class="head">
-            <img src="/{{main_psy_content.image.image}}"/>
+            <img src="/{{single_psy_content.image.image}}"/>
             <div class="Tag Psyco"> روانشناسی </div>
-            <h3>{{main_psy_content.title}}</h3>
+            <h3>{{single_psy_content.title}}</h3>
         </div>
         <div class="main">
-            <pre>{{main_psy_content.summary}}</pre>
+            <pre>{{single_psy_content.summary}}</pre>
         </div>
         <div class="foot">
-            <p>{{main_psy_content.pub_date|date:"Y-m-d"|jalali}}</p>
-            <p>{{main_psy_content.author}}</p>
+            <p>{{single_psy_content.pub_date|date:"Y-m-d"|jalali}}</p>
+            <p>{{single_psy_content.author}}</p>
             <div class="read-more">
-                <a href="/psychology/{{psy_content.id}}">ادامه مطلب</a>
+                <a href="/psychology/{{single_psy_content.id}}">ادامه مطلب</a>
             </div>
         </div>
     </div>
