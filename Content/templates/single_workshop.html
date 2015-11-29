@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
+{% load filters %}
 
 {% block contents %}
         <link rel="stylesheet" href="{% static 'css/complete.css' %}">
@@ -13,9 +14,9 @@
                     <h3>{{single_workshop.title}}</h3>
             </div>
             <div class="main">
-                    <p>
+                    <pre>
                         {{single_workshop.body}}
-                    </p>
+                    </pre>
                 {% for audio in single_workshop.audios %}
                 <div class="Audio">
                     <audio controls>
@@ -39,7 +40,7 @@
                 </div>
             </div>
             <div class="foot">
-                <p>{{single_workshop.where}}</p>
+                <p>{{single_workshop.wheredate:"Y-m-d"|jalali}}</p>
                 <p>{{single_workshop.when}}</p>
                 <p>{{single_workshop.audience}}</p>
             </div>

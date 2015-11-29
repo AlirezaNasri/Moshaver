@@ -58,9 +58,9 @@
                             <h3>{{single_news.title}}</h3>
                         </div>
                         <div class="Nmain">
-                            <p>
+                            <pre>
                                 {{single_news.summary}}
-                            </p>
+                            </pre>
                         </div>
                         <div class="Nfoot">
                             <p>{{single_news.pub_date|date:"Y-m-d"|jalali}}</p>
@@ -81,12 +81,12 @@
                         <h3>{{single_workshop.title}}</h3>
                     </div>
                     <div class="Wmain">
-                        <p>
+                        <pre>
                             {{single_workshop.summary}}
-                        </p>
+                        </pre>
                     </div>
                     <div class="Wfoot">
-                        <p>{{single_workshop.where}}</p>
+                        <p>{{single_workshop.where|date:"Y-m-d"|jalali}}}}</p>
                         <p>{{single_workshop.when}}</p>
                         <p>{{single_workshop.audience}}</p>
                     </div>

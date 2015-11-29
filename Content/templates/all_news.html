@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
+{% load filters %}
 
 {% block contents %}
 	<link rel="stylesheet" href="{% static 'css/All_landscape.css' %}">
@@ -15,12 +16,12 @@
             <h3>{{single_news.title}}</h3>
         </div>
         <div class="main">
-            <p>
+            <pre>
             	{{single_news.summary}}
-            </p>
+            </pre>
         </div>
         <div class="foot">
-            <p>{{single_news.pub_date}}</p>
+            <p>{{single_news.pub_date|date:"Y-m-d"|jalali}}</p>
             <p>{{single_news.author}}</p>
             <div class="read-more">
                 <a href="/news/{{single_news.id}}">ادامه مطلب</a>

@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
+{% load filters %}
 
 {% block contents %}
     <link rel="stylesheet" href="{% static 'css/complete.css' %}">
@@ -10,12 +11,12 @@
                 <h3>{{single_psy.title}}</h3>
             </div>
             <div class="main">
-                <p>
+                <pre>
                     {{single_psy.body}}
-                </p>
+                </pre>
             </div>
             <div class="foot">
-                <p>{{single_psy.pub_date}}</p>
+                <p>{{single_psy.pub_date|date:"Y-m-d"|jalali}}</p>
                 <p>{{single_psy.author}}</p>
             </div>
         </div>

@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
+{% load filters %}
 
 {% block contents %}
 	<link rel="stylesheet" href="{% static 'css/All_landscape.css' %}">
@@ -16,12 +17,12 @@
             <h3>{{psy_content.title}}</h3>
         </div>
         <div class="main">
-            <p>
+            <pre>
                 {{psy_content.summary}}
-            </p>
+            </pre>
         </div>
         <div class="foot">
-            <p>{{psy_content.pub_date}}</p>
+            <p>{{psy_content.pub_date|date:"Y-m-d"|jalali}}</p>
             <p>{{psy_content.author}}</p>
             <div class="read-more">
                 <a href="/psychology/{{psy_content.id}}">ادامه مطلب</a>
