@@ -12,9 +12,7 @@
                     <h3>{{single_news.title}}</h3>
                 </div>
                 <div class="main">
-                    <pre>
-                        {{single_news.body}}
-                    </pre>
+                    <pre>{{single_news.body}}</pre>
                     
                     {% for image in single_news.images.all %}
                     <div class="Images">
