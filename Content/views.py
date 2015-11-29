@@ -2,12 +2,12 @@ from django.shortcuts import render, redirect
 from Content.models import News, Workshop, PsyContent, Interview, EduContent, ImageContent, FAQ, Grad, Advisor
 
 
-def get_context(news=[0, 4], psy=[0, 4], edu=[0, 4], work=[0, 1]):
-	news = News.objects.all().order_by('-pub_date')[news[0]:news[1]]
-	psy_contents = PsyContent.objects.all().order_by('-pub_date')[psy[0]:psy[1]]
-	edu_contents = EduContent.objects.all().order_by('-pub_date')[edu[0]:edu[1]]
-	workshops = Workshop.objects.all().order_by('-when')[work[0]:work[1]]
-	billboards = ImageContent.objects.filter(caption='billboard')
+def get_context():
+	news = News.objects.all().order_by('-pub_date')[:4]
+	psy_contents = PsyContent.objects.all().order_by('-pub_date')[:4]
+	edu_contents = EduContent.objects.all().order_by('-pub_date')[:4]
+	workshops = Workshop.objects.all().order_by('-when')[:4]
+	billboards = ImageContent.objects.filter(caption='billboard')[:5]
 	faqs = FAQ.objects.all()[:4]
 
 	return {
@@ -16,7 +16,7 @@ def get_context(news=[0, 4], psy=[0, 4], edu=[0, 4], work=[0, 1]):
 		"edu_contents": edu_contents, 
 		"workshops": workshops,
 		"billboards": billboards,
-		"FAQ": faqs,
+		"faq": faqs,
 	}
 
 def home_page(req):
@@ -27,7 +27,8 @@ def get_all_workshops(req):
 	page = 1
 	if 'page' in req.GET:
 		page = int(req.GET['page'])
-	context = get_context(work=[page * 10 - 10, page * 10])
+	context = get_context(pagework=[page * 10 - 10, page * 10])
+	context['main_workshops'] = Workshop.objects.all().order_by('-when')[page * 10 - 10:page * 10]
 	context['next_page'] = page + 1
 	context['prev_page'] = page - 1
 	return render(req, 'all_workshops.html', context)
