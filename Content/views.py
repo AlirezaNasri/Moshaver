@@ -62,7 +62,7 @@ def get_all_faqs(req):
 	if 'page' in req.GET:
 		page = int(req.GET['page'])
 	context = get_context(page + 1 if len(FAQ.objects.all()) > page * 10 else None, page - 1 if page != 1 else None)
-	context['main_faq'] = FAQ.objects.all().order_by('-pub_date')[page * 10 - 10:page * 10]
+	context['main_faq'] = FAQ.objects.all()[page * 10 - 10:page * 10]
 	return render(req, 'FAQ.html', context)
 
 def get_news(req, id):
