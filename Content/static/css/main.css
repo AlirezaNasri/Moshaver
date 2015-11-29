@@ -1,7 +1,7 @@
 @font-face { 
 	font-family: BRoya;
-   	src: url('font/BRoya.ttf'),
-	url('font/BRoya.eot');
+   	src: url('/static/font/BRoya.ttf'),
+	url('/static/font/BRoya.eot');
  } 
 body {
 	font-family: 'BRoya';
