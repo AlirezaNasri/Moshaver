@@ -3,7 +3,7 @@ from django.contrib import admin
 
 
 admin.autodiscover()
-urlpatterns = patterns('',
+urlpatterns = [
     # Examples:
     # url(r'^$', 'Moshaver.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
@@ -29,4 +29,4 @@ urlpatterns = patterns('',
     url(r'^advisors/$', 'Content.views.get_all_advisors'),
 
     url(r'^$', 'Content.views.home_page'),
-)
+]

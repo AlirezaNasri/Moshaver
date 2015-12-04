@@ -99,7 +99,7 @@ def get_psy(req, id):
 		context['single_psy'] = PsyContent.objects.get(id=id)
 	except:
 		return redirect(req, '/psychology/')
-	return render(req, 'single_psy.html', context)	
+	return render(req, 'single_psy.html', context)
 
 def get_all_advisors(req):
 	context = get_context()
