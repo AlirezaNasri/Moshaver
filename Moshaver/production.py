@@ -10,7 +10,7 @@ with open(os.path.join(BASE_DIR, 'settings.json'), 'r') as settings_file:
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '-&a-9&6qxkzq4vz&#u@=5)aaya1ar)#=1x5mmuhhpb3v38a-bz'
+SECRET_KEY = settings_dict['secret_key']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -30,7 +30,6 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Content',
-    'south',
 )
 
 MIDDLEWARE_CLASSES = (
