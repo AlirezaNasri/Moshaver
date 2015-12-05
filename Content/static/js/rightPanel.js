@@ -41,7 +41,7 @@ $(document).ready(function() {
         var x = $('body').width();
         if ($('.leftPanel').is(":visible"))
             x -= $('.leftPanel').outerWidth();
-        if($('.rightPanle').is(":visible"))
+        if($('.rightPanle').is(":visible") && $(window).width() > 500)
             x -= $('.rightPanle').outerWidth();
         $('.contain').width(x-30);
     });
