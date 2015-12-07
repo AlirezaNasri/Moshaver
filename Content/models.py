@@ -3,7 +3,8 @@ from django.db import models
 class ImageContent(models.Model):
 	image = models.ImageField(upload_to='static/images')
 	caption = models.TextField(null=True, blank=True)
-	
+#	image_type = models.TextField(default='normal')
+
 	def __unicode__(self):
 		return self.caption
 

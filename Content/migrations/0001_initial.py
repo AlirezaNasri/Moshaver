@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from django.db import models, migrations
+from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
@@ -17,12 +17,9 @@ class Migration(migrations.Migration):
                 ('name', models.CharField(max_length=100)),
                 ('licence', models.TextField()),
                 ('tel', models.CharField(max_length=100)),
-                ('email', models.EmailField(max_length=75)),
+                ('email', models.EmailField(max_length=254)),
                 ('position', models.TextField()),
             ],
-            options={
-            },
-            bases=(models.Model,),
         ),
         migrations.CreateModel(
             name='EduContent',
@@ -34,49 +31,46 @@ class Migration(migrations.Migration):
                 ('body', models.TextField()),
                 ('author', models.CharField(max_length=100)),
             ],
-            options={
-            },
-            bases=(models.Model,),
+        ),
+        migrations.CreateModel(
+            name='FAQ',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('question', models.TextField()),
+                ('answer', models.TextField()),
+            ],
         ),
         migrations.CreateModel(
             name='FileContent',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('file_field', models.FileField(upload_to=b'')),
+                ('file_field', models.FileField(upload_to=b'static')),
                 ('description', models.TextField()),
             ],
-            options={
-            },
-            bases=(models.Model,),
         ),
         migrations.CreateModel(
             name='Grad',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('name', models.CharField(max_length=100)),
-                ('country_rank', models.IntegerField()),
-                ('state_rank', models.IntegerField()),
-                ('major', models.CharField(max_length=100)),
+                ('country_rank', models.IntegerField(null=True, blank=True)),
+                ('state_rank', models.IntegerField(null=True, blank=True)),
+                ('major', models.CharField(max_length=100, null=True, blank=True)),
                 ('acc_major', models.CharField(max_length=100)),
                 ('year', models.IntegerField()),
-                ('results', models.ImageField(upload_to=b'')),
-                ('city', models.CharField(max_length=100)),
-                ('school', models.CharField(max_length=100)),
+                ('results', models.ImageField(null=True, upload_to=b'static/images', blank=True)),
+                ('city', models.CharField(max_length=100, null=True, blank=True)),
+                ('school', models.CharField(max_length=100, null=True, blank=True)),
             ],
-            options={
-            },
-            bases=(models.Model,),
         ),
         migrations.CreateModel(
             name='ImageContent',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('image', models.ImageField(upload_to=b'')),
+                ('image', models.ImageField(upload_to=b'static/images')),
                 ('caption', models.TextField(null=True, blank=True)),
+                ('image_type', models.TextField(default=b'normal')),
             ],
-            options={
-            },
-            bases=(models.Model,),
         ),
         migrations.CreateModel(
             name='Interview',
@@ -84,32 +78,26 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('question', models.TextField()),
                 ('answer', models.TextField()),
-                ('image', models.ImageField(upload_to=b'')),
+                ('image', models.ImageField(upload_to=b'static/images')),
                 ('date', models.DateTimeField()),
-                ('interviewer', models.CharField(max_length=100)),
-                ('header', models.TextField()),
-                ('footer', models.TextField()),
+                ('interviewer', models.CharField(max_length=100, null=True, blank=True)),
+                ('header', models.TextField(null=True, blank=True)),
+                ('footer', models.TextField(null=True, blank=True)),
                 ('grad', models.ForeignKey(to='Content.Grad')),
             ],
-            options={
-            },
-            bases=(models.Model,),
         ),
         migrations.CreateModel(
             name='News',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('title', models.CharField(max_length=100)),
-                ('title_image', models.ImageField(upload_to=b'')),
+                ('title_image', models.ImageField(upload_to=b'static/images')),
                 ('pub_date', models.DateTimeField(auto_now=True)),
                 ('summary', models.TextField()),
                 ('body', models.TextField()),
                 ('author', models.CharField(max_length=100)),
-                ('images', models.ManyToManyField(to='Content.ImageContent')),
+                ('images', models.ManyToManyField(to='Content.ImageContent', null=True, blank=True)),
             ],
-            options={
-            },
-            bases=(models.Model,),
         ),
         migrations.CreateModel(
             name='Office',
@@ -119,9 +107,6 @@ class Migration(migrations.Migration):
                 ('address', models.TextField()),
                 ('available_times', models.TextField()),
             ],
-            options={
-            },
-            bases=(models.Model,),
         ),
         migrations.CreateModel(
             name='PsyContent',
@@ -134,52 +119,42 @@ class Migration(migrations.Migration):
                 ('author', models.CharField(max_length=100)),
                 ('image', models.ForeignKey(to='Content.ImageContent')),
             ],
-            options={
-            },
-            bases=(models.Model,),
         ),
         migrations.CreateModel(
             name='Workshop',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('title', models.CharField(max_length=100)),
-                ('title_image', models.ImageField(upload_to=b'')),
+                ('title_image', models.ImageField(upload_to=b'static/images')),
                 ('summary', models.TextField()),
                 ('body', models.TextField()),
                 ('author', models.CharField(max_length=100)),
-                ('audience', models.TextField()),
-                ('audio', models.FileField(upload_to=b'')),
-                ('video', models.FileField(upload_to=b'')),
+                ('audience', models.TextField(null=True, blank=True)),
+                ('audio', models.FileField(null=True, upload_to=b'static', blank=True)),
+                ('video', models.FileField(null=True, upload_to=b'static', blank=True)),
                 ('where', models.TextField()),
                 ('when', models.DateTimeField()),
-                ('images', models.ManyToManyField(to='Content.ImageContent')),
+                ('images', models.ManyToManyField(to='Content.ImageContent', null=True, blank=True)),
             ],
-            options={
-            },
-            bases=(models.Model,),
         ),
         migrations.AddField(
             model_name='grad',
             name='image',
-            field=models.ForeignKey(to='Content.ImageContent'),
-            preserve_default=True,
+            field=models.ForeignKey(blank=True, to='Content.ImageContent', null=True),
         ),
         migrations.AddField(
             model_name='educontent',
             name='files',
-            field=models.ManyToManyField(to='Content.FileContent'),
-            preserve_default=True,
+            field=models.ManyToManyField(to='Content.FileContent', null=True, blank=True),
         ),
         migrations.AddField(
             model_name='educontent',
             name='image',
-            field=models.ForeignKey(to='Content.ImageContent'),
-            preserve_default=True,
+            field=models.ForeignKey(blank=True, to='Content.ImageContent', null=True),
         ),
         migrations.AddField(
             model_name='advisor',
             name='image',
             field=models.ForeignKey(to='Content.ImageContent'),
-            preserve_default=True,
         ),
     ]
