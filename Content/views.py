@@ -108,7 +108,12 @@ def get_all_advisors(req):
 
 def get_all_grads(req):
 	context = get_context()
-	context['grads'] = Grad.objects.all()
+	fields = {}
+	for grad in Grad.objects.all():
+		if grad.major not in fields:
+			fields[grad.major] = []
+		fields[grad.major].append(grad)
+	context['fields'] = fields
 	return render(req, 'all_grads.html', context)		
 
 def get_gallery(req):

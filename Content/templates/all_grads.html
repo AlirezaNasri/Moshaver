@@ -3,12 +3,14 @@
 
 {% block contents %}
     <link rel="stylesheet" href="{% static 'css/all_vertical.css' %}">
+    {% for field in fields %}
     <div class="Category">
         <div class="space"></div>
-        <h3> افتخار افرینان </h3>
+        <h3> افتخار افرینان {{ field.name }} </h3>
     </div>
+
     <div class="single_items">
-        {% for single_grad in grads %}
+        {% for single_grad in field.grads %}
         <div class="single">
             <div class="head">
                 <img src="/{{single_grad.image}}"/>
@@ -42,6 +44,7 @@
         </div>
         {% endfor %}
     </div>
+    {% endfor %}
     <div id="page-number">
         {% if next_page %}
         <a href="/graduates/?&page={{next_page}}"><p>صفحه ی بعدی >> </p></a>
