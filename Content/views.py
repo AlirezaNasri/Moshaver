@@ -7,7 +7,7 @@ def get_context(next_page=None, prev_page=None):
 	psy_contents = PsyContent.objects.all().order_by('-pub_date')[:4]
 	edu_contents = EduContent.objects.all().order_by('-pub_date')[:4]
 	workshops = Workshop.objects.all().order_by('-when')[:4]
-	billboards = ImageContent.objects.filter(caption='billboard')[:5]
+	billboards = ImageContent.objects.filter(caption__startswith='billboard')[:5]
 	faqs = FAQ.objects.all()[:4]
 
 	return {
@@ -115,6 +115,6 @@ def get_gallery(req):
 	page = 1
 	if 'page' in req.GET:
 		page = int(req.GET['page'])
-	context = get_context(page + 1 if len(ImageContent.objects.filter(caption='gallery')) > page * 10 else None, page - 1 if page != 1 else None)
+	context = get_context(page + 1 if len(ImageContent.objects.filter(caption__startswith='gallery')) > page * 10 else None, page - 1 if page != 1 else None)
 	context['gallery'] = ImageContent.objects.filter(caption='gallery')[page * 10 - 10: page * 10]
 	return render(req, 'gallery.html', context)	

@@ -10,7 +10,7 @@
                 {% for billboard in billboards %}
                 <div class="slider_content">
                     <img src="/{{ billboard.image }}">
-                    <div class="slider_caption">{{billboard.caption}}</div>
+                    <div class="slider_caption">{{billboard.caption|slice:"9:"}}</div>
                 </div>
                 {% endfor %}
             </div>
