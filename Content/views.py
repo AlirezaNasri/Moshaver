@@ -116,5 +116,5 @@ def get_gallery(req):
 	if 'page' in req.GET:
 		page = int(req.GET['page'])
 	context = get_context(page + 1 if len(ImageContent.objects.filter(caption__startswith='gallery')) > page * 10 else None, page - 1 if page != 1 else None)
-	context['gallery'] = ImageContent.objects.filter(caption='gallery')[page * 10 - 10: page * 10]
+	context['gallery'] = ImageContent.objects.filter(caption__startswith='gallery')[page * 10 - 10: page * 10]
 	return render(req, 'gallery.html', context)	
