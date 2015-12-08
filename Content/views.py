@@ -107,7 +107,6 @@ def get_all_advisors(req):
 	return render(req, 'all_advisors.html', context)	
 
 def get_all_grads(req):
-	context = get_context()
 	fields = {}
 	for grad in Grad.objects.all():
 		if grad.major not in fields:
@@ -117,7 +116,7 @@ def get_all_grads(req):
 	for field in fields:
 		context['fields'].append({
 			'name': field,
-			'grads': fields[field]
+			'grads': fields[field][:10]
 			})
 	return render(req, 'all_grads.html', context)		
 

@@ -12,19 +12,21 @@
     <div class="single_items">
         {% for single_grad in field.grads %}
         <div class="single">
+            {% if single_grad.image %}
             <div class="head">
                 <img src="/{{single_grad.image}}"/>
             </div>
+            {% endif %}
             <div class="main">
                 <h3> {{single_grad.name}} </h3>
                 <div class="details">
-                    <div>
+<!--                     <div>
                         <p>رتبه منطقه</p>
                         <p>{{ single_grad.state_rank }}</p>
                     </div>
 
                     <div class="space"></div>
-
+ -->
                     <div>
                         <p>سال</p>
                         <p>{{ single_grad.year }}</p>
@@ -40,7 +42,7 @@
                 <p> {{ single_grad.acc_major }} </p>
 <!--                <p>علامه طباطبایی</p>-->
             </div>
-            <a href="#"> <div class="read-more"> مشاهده </div> </a>
+            <!-- <a href="#"> <div class="read-more"> مشاهده </div> </a> -->
         </div>
         {% endfor %}
     </div>
