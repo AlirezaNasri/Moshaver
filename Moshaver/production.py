@@ -13,9 +13,7 @@ with open(os.path.join(BASE_DIR, 'settings.json'), 'r') as settings_file:
 SECRET_KEY = settings_dict['secret_key']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-
-TEMPLATE_DEBUG = True
+DEBUG =True
 
 ALLOWED_HOSTS = ['*']
 

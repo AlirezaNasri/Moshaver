@@ -113,7 +113,12 @@ def get_all_grads(req):
 		if grad.major not in fields:
 			fields[grad.major] = []
 		fields[grad.major].append(grad)
-	context['fields'] = fields
+       	context['fields'] = []
+	for field in fields:
+		context['fields'].append({
+			'name': field,
+			'grads': fields[field]
+			})
 	return render(req, 'all_grads.html', context)		
 
 def get_gallery(req):
