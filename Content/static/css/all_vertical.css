@@ -78,10 +78,6 @@
     border-bottom: 1px solid #0BAAC1;
 }
 
-.single .main{
-    margin-bottom: 50px;
-}
-
 .details {
     display: flex;
     flex-direction: row;
