@@ -1,79 +1,52 @@
 .rightPanle {
-	width:20%;
-   	top:25%;
-	right:0;   
-	background: #FFF;
-}
-.wrap{
-	width: 100%;
-	max-width: 300px;
-	margin:20px auto;
-}
-
-.collapsible{
-	list-style: none;
-	font-family: 'HelveticaNeue', Arial, Helvetica, sans-serif;
-	font-size:14px
+	position:relative;
+    display: inline-block;
+	width:23%;
+	margin-top:1%;
+    right: 0;
+    vertical-align: top;
+    text-align:right;
+	margin-bottom: 200px;
+    float: right;
 }
 
-.collapsible li.header{
-	color: #666;
-   	padding:4px 12px;
-	border: 1px solid #bbb;
+.rightCat {
+    border: 1px solid #EAEAEA;
+    margin-bottom: 10px;
 }
 
-.collapsible li {
-   	border: 1px solid #bbb;
-	border-top:0;
-   	margin: 0;
-	background:#F0F0F0;
+.rightCat .singleNews p{
+    background-color: white;
+    margin: 0;
+    vertical-align: middle;
 }
 
-.collapsible li a {
-	text-decoration:none;
-	color:#666;
-	display:block;
-  	padding:8px 12px;
+.rightCat h4{
+    margin: 0;
+    padding: 0.6em;
 }
 
-.collapsible li a:hover {
-	background: #404040;
-   	text-decoration:none;
+.rightCat .singleRight img{
+    width: 90px;
+    height: 60px;
+    float: right;
+    padding: 0;
+    margin: 0;
+    border-radius: 4px;
+    vertical-align: middle;
+    margin-left: 5px;
 }
 
-.collapsible li ul { 
-	list-style: none;
-   	background: #d3d3d3;
-   	display: none;
-   	margin:0;
-	padding:0;
+.rightCat .singleRight{
+    overflow: hidden;
+    border-bottom: 1px solid #EAEAEA;
+    background-color: white;
+    padding: 5px;
 }
 
-.collapsible li ul li {
-   	margin:0;
-   	border:0;
-   	border-bottom:1px solid #bbb;
+.rightCat > p{
+    border-bottom: 1px solid #EAEAEA;
+    background-color: white;
+    margin:0;
+    padding: 5px;
 }
-
-.collapsible li ul li:last-child {
-	border-bottom:0;
-}
-.collapsible li ul li a {
-   	padding: 5px 10px;
-   	display: block;
-   	padding-left: 33px;
-	background: #d3d3d3;
- }
-
-.collapsible li ul li a:hover {
-   	background: #d9d9d9;
-}
-
-.collapsible .dropdown > a {
-   	background: url(/static/images/arrowdown.png) no-repeat right center;
-}
-
-.collapsible .dropdown > a:hover {
-   	background: #F8F8F8 url(/static/images/arrowdown.png) no-repeat right center !important;
-}
-

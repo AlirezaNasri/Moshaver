@@ -1,11 +1,11 @@
 @font-face { 
 	font-family: BRoya;
-   	src: url('/static/font/BRoya.ttf'),
-	url('/static/font/BRoya.eot');
+   	src: url('font/BRoya.ttf'),
+	url('font/BRoya.eot');
  } 
 body {
 	font-family: 'BRoya';
-    background-color: #f2f2f2;
+    background-color: #f7f8fA;
     margin:0;
 
     -moz-font-smoothing: none;
@@ -13,7 +13,7 @@ body {
     -webkit-font-smoothing: antialiased;
 
     line-height: 200%;
-    max-width: 1450px;
+    max-width: 1200px;
     position: relative;
     margin: auto;
 }
@@ -31,12 +31,11 @@ pre {
 
 .header {
 	position:relative;
-	background-color:#489EAA;
+	background-color:#f2f2f2;
 	width:100%;
-    height:60px;
-    -webkit-box-shadow: 0px 3px 10px -1.5px rgba(64,64,64,1);
-    -moz-box-shadow: 0px 3px 10px -1.5px rgba(64,64,64,1);
-    box-shadow: 0px 3px 10px -1.5px rgba(64,64,64,1);
+    -webkit-box-shadow: 0px 3px 10px -1.5px rgba(64,64,64,0.2);
+    -moz-box-shadow: 0px 3px 10px -1.5px rgba(64,64,64,0.2);
+    box-shadow: 0px 3px 10px -1.5px rgba(64,64,64,0.2);
 }
 
 .header input{
@@ -49,7 +48,7 @@ pre {
     -moz-appearance: none;
     appearance: none;
     outline: 0;
-    border: 0;
+    border: 1px solid #EDEDED;
     font-size: 18px;
     line-height: 20px;
     direction: rtl;
@@ -58,7 +57,7 @@ pre {
     margin-top: 10px;
     margin-bottom: 10px;
     margin-left: 1%;
-    background-color: #68BECA;
+    background-color: #FAFAFA;
     border-radius: 2px;
 }
 
@@ -71,22 +70,26 @@ pre {
 }
 
 .header input::-webkit-input-placeholder{
-    color: white;
+    color: #AAA;
     font-size: 1.1em;
+    font-family: "BRoya";
 }
 .header input:-moz-placeholder{
-    color: white;
+    color: #AAA;
     font-size: 1.1em;
+    font-family: "BRoya";
 }
 
 .header input::-moz-placeholder{
-    color: white;
+    color: #AAA;
     font-size: 1.1em;
+    font-family: "BRoya";
 }
 
 .header input:-ms-input-placeholde{
-    color: white;
+    color: #AAA;
     font-size: 1.1em;
+    font-family: "BRoya";
 }
 
 .header #headerLogo{
@@ -104,6 +107,24 @@ pre {
     margin-left: 1%;
 }
 
+.header a{
+    display: inline-block;
+    color: black;
+    text-decoration: none;
+}
+
+.header a:hover{
+    color:#404040;
+    transform: scale(1.05);
+}
+
+.header .menu{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
 #showMenu {
     display: inline-block;
     font-size: 40px;
@@ -117,17 +138,20 @@ pre {
     margin-right: 10px;
 }
 
-#rightH{
+#Slider{
+    box-sizing: border-box;
 	position:relative;
-	width:100%;
+	width:70%;
     display: inline-block;
-    
+    border: 1px solid #AAA;
+/*
     -webkit-box-shadow: 0px 0px 10px -1px rgba(64,64,64,1);
     -moz-box-shadow: 0px 0px 10px -1px rgba(64,64,64,1);
     box-shadow: 0px 0px 10px -1px rgba(64,64,64,1);
+*/
 }
 
-#rightH   .container {
+#Slider   .container {
     margin:auto;
     max-width:100%;
 }
@@ -179,19 +203,6 @@ a{
 a:visited { 
     color: #404050;
 }
-
-.rightPanle {
-	position:relative;
-    display: inline-block;
-	width:18%;
-	margin-top:1%;
-    right: 0;
-    vertical-align: top;
-    text-align:right;
-    padding-right: 20px;
-	margin-bottom: 200px;
-}
-
 
 .wrap{
 	width: 100%;
@@ -277,7 +288,6 @@ a:visited {
     vertical-align: top;
     width: 53.5%;
     margin-left: 1%;
-    background-color: #f2f2f2;
 }
 
 @media (max-width: 1000px) {
