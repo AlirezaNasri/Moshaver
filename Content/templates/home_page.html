@@ -54,7 +54,7 @@
     <div class="main">
             <div class="MainBox">
                 <h4> کلاس های اموزشی </h4>
-                {% for single_class in classes%}
+                {% for single_class in classes %}
                     <a href="/{{single_class.id}}"><p> {{single_class.title}} </p></a>
                 {% endfor %}
             </div>
@@ -73,7 +73,7 @@
             <div>
                 <div class="prevGrad"></div>
                 <div class="gradRow">
-                    {% for single_grad in field.grads %}
+                    {% for single_grad in grads %}
                         <div class="single">
                             {% if single_grad.image %}
                             <div class="head">

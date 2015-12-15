@@ -44,12 +44,12 @@
         <div class="rightCat">
             <h4> اطلاعیه های مرکز </h4>
             
-            {% for first in firsts %}
+            {% for first in announcements %}
             <a href="/{{first.id}}">
                 <div class="singleRight">
                     {% if first.image %}
                         <img src="/{{first.image}}">
-                    {% enfif %}
+                    {% endif %}
                     <p> {{first.title}}</p>
                 </div>
             </a>
@@ -60,10 +60,10 @@
         <div class="rightCat">
             <h4> اخبار کنکوری </h4>
             
-            {% for second in seconds %}
+            {% for second in news %}
             <a href="/{{second.id}}">
                 <div class="singleRight">
-                    {% if second.image %}
+                    {% if second.titleImage %}
                         <img src="/{{second.image}}">
                     {% endif %}
                     <p> {{second.title}} </p>
@@ -75,13 +75,10 @@
         <div class="rightCat">
             <h4> 118 کنکوری </h4>
             
-            {% for third in thirds %}
+            {% for third in faqs %}
             <a href="/{{third.id}}">
                 <div class="singleRight">
-                    {% if third.image %}
-                        <img src="/{{third.image}}">
-                    {% endif %}
-                    <p> {{third.title}} </p>
+                    <p> {{third.question}} </p>
                 </div>
             </a>
             {% endfor %}
@@ -109,7 +106,7 @@
                     </td>
                     <td> 
                         <p>   : شماره های تماس </p>
-                        <p>   051 - 765 95 74 </p> 
+                        <p>   0513 - 765 95 74 </p>
                         <p style="clear:both"> خراسان رضوی-مشهد-فلسطین 10-پلاک 44- مرکز تخصصی مشاوره تحصیلی اختراعی </p>
                     </td>
                 </tr>
