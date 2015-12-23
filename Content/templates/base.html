@@ -67,8 +67,8 @@
         {% for single_news in news %}
         <a href="/news/{{single_news.id}}">
             <div class="singleRight">
-                {% if single_news.titleImage %}
-                <img src="/{{single_news.image}}">
+                {% if single_news.title_image %}
+                <img src="/{{single_news.title_image}}">
                 {% endif %}
                 <p> {{single_news.title}} </p>
             </div>
