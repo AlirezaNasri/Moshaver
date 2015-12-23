@@ -42,3 +42,18 @@
     height: 50px;
 }
 
+#footer a{
+    color: white;
+    text-decoration: none;
+    display: block;
+    border-bottom: 1px solid #777;
+}
+
+#footer a:last-child {
+    border-bottom: 0;
+}
+
+#footer a:hover{
+    color:#888;
+}
+

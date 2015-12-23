@@ -1,0 +1,49 @@
+
+#tabs{
+    position: relative;
+}
+
+tton1
+{
+    vertical-align:bottom;
+    width : 25%;
+    background-color: #CACACA;
+	text-align: center;
+	font-size: 1.2em;
+    display: inline-block;
+    
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    -webkit-box-shadow: 0px -3px 8px -4px rgba(64,64,64,1);
+    -moz-box-shadow: 0px -3px 8px -4px rgba(64,64,64,1);
+    box-shadow: 0px -3px 8px -4px rgba(64,64,64,1);
+    line-height: 1.5em;
+}
+.button1:hover
+{
+		background-color: #f0f0f0;
+}
+
+.activeItem {
+    border-top: solid #00B5AD 2px;
+    border-right: solid #00B5AD 2px;
+    border-left: solid #00B5AD 2px;
+    background-color: #F2f2f2;
+    padding: 1px;
+    -webkit-box-shadow: 0px -3px 8px -4px rgba(00,181,173,1);
+    -moz-box-shadow: 0px -3px 8px -4px rgba(00,181,173,1);
+    box-shadow: 0px -3px 8px -4px rgba(00,181,173,1);
+}
+
+.button1:not(.activeItem) {
+    margin-bottom: 3px;
+    border-bottom: solid 1px #CACACA;
+}
+
+.MainItems {
+    border-radius: 10px;
+    padding: 10px;
+    background: #f2f2f2;
+    border-top: solid 2px #00B5AD;
+    margin-top: -3px;
+}
