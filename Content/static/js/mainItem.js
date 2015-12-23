@@ -16,7 +16,13 @@ $(document).ready(function(){
    });
     
     $(window).on( 'resize', function () {
-        $('#rightH').height($('#rightH').width()/16*(9.5));
+        $('#Slider').height($('#Slider').width()/16*(9.5));
+        
+        var elements = document.getElementsByClassName("linkBox");
+        for (var i = 0, len = elements.length; i < len; i++) {
+        // elements[i].style ...
+            $(elements[i]).height($('#Slider').height()/10*3);
+        }
         $("slidesjs-slide").css({
             heigh: "100%",
         });

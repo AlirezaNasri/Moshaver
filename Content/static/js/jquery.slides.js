@@ -205,7 +205,7 @@
         zIndex: 0
       });
       width = $element.width();
-      height = ($("#rightH").height());
+      height = ($("#Slider").height());
       this.options.width = width;
       this.options.height = height;
       return $(".slidesjs-control, .slidesjs-container", $element).css({
