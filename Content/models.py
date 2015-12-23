@@ -90,13 +90,12 @@ class Advisor(models.Model):
     email = models.EmailField()
     position = models.TextField()
 
+    def __unicode__(self):
+        return self.name
 
-def __unicode__(self):
-    return self.name
 
-
-def __str__(self):
-    return self.name.encode('utf-8')
+    def __str__(self):
+        return self.name.encode('utf-8')
 
 
 class Office(models.Model):
@@ -119,9 +118,8 @@ class PsyContent(models.Model):
     body = RichTextField()
     author = models.CharField(max_length=100)
 
-
-def __str__(self):
-    return self.title.encode('utf-8')
+    def __str__(self):
+        return self.title.encode('utf-8')
 
 
 class Interview(models.Model):
@@ -144,22 +142,19 @@ class EduContent(models.Model):
     author = models.CharField(max_length=100)
     files = models.ManyToManyField(FileContent, null=True, blank=True)
 
-
-def __str__(self):
-    return self.title.encode('utf-8')
+    def __str__(self):
+        return self.title.encode('utf-8')
 
 
 class FAQ(models.Model):
     question = models.TextField()
     answer = RichTextField()
 
+    def __unicode__(self):
+        return self.question
 
-def __unicode__(self):
-    return self.question
-
-
-def __str__(self):
-    return self.question.encode('utf-8')
+    def __str__(self):
+        return self.question.encode('utf-8')
 
 
 class Announcement(models.Model):
@@ -172,3 +167,8 @@ class Announcement(models.Model):
 
     def __str__(self):
         return self.title.encode('utf-8')
+
+
+class Class(models.Model):
+    title = models.CharField(max_length=100)
+    body = RichTextField()

@@ -5,7 +5,6 @@
     <title>مرکز مشاوره تحصیلی اختراعی</title>
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
     <link rel="stylesheet" href="{% static 'css/footer.css' %}">
-<!--    <link rel="stylesheet" href="css/main.css">-->
     <link rel="stylesheet" href="{% static 'css/rightPanel.css' %}">
     <link rel="stylesheet" href="{% static 'css/all_vertical.css' %}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
@@ -17,110 +16,109 @@
 </head>
 
 <body>
-    <div class="header">
-<!--        <h3>مرکز مشاوره تحصیلی اختراعی</h3>-->
-        <div class="topheader">
-            <div id="headerLogo">
-                <a href="/"><img src="images/logo.png"></a>
+<div class="header">
+    <div class="topheader">
+        <div id="headerLogo">
+            <a href="/"><img src="/static/images/logo.png"></a>
+        </div>
+        <input type="text" placeholder="جست و جو">
+    </div>
+
+    <div class="menu">
+        <a href="/news/"> اخبار </a>
+        <a href="/gallery/"> گالری </a>
+        <a href="/advisors/"> مشاورین تحصیلی </a>
+        <a href="/edu/"> آموزشی </a>
+        <a href="/psychology/"> کنکوری ها بدانند </a>
+        <a href="/workshops/"> کارگاه ها </a>
+        <a href="/faq/"> ۱۱۸ کنکوری</a>
+    </div>
+
+    <div class="sign_in">
+    </div>
+</div>
+
+<div class="contain">
+    {% block contents %} {% endblock %}
+</div>
+
+
+<div class="rightPanle">
+
+    <div class="rightCat">
+        <h4> اطلاعیه های مرکز </h4>
+
+        {% for announcement in announcements %}
+        <a href="">
+            <div class="singleRight">
+                {% if announcement.image %}
+                <img src="/{{announcement.image}}">
+                {% endif %}
+                <p> {{announcement.title}}</p>
             </div>
-            <input type="text" placeholder="جست و جو">
-        </div>
-<!--
-        <div id="showMenu">
-            <i class="fa fa-bars x3"></i>
-        </div>
--->
-        <div class="menu">       
-            <a href="/news/"> اخبار </a>
-            <a href="/gallery/"> گالری </a>
-            <a href="/advisors/"> مشاوره </a>
-            <a href="/edu/"> آموزشی </a>
-            <a href="/psychology/"> روانشناسی </a>
-            <a href="/workshops/"> کارگاه ها </a>
-            <a href="/faq/"> پرسش های متداول </a>
-        </div>
-        
-        <div class="singin">
-        </div>
-	</div>
-    
-    <div class="contain">
-        {% block contents %} {% endblock %}
+        </a>
+        {% endfor %}
+
     </div>
-    
- 
-    <div class="rightPanle">
-        
-        <div class="rightCat">
-            <h4> اطلاعیه های مرکز </h4>
-            
-            {% for first in announcements %}
-            <a href="/{{first.id}}">
-                <div class="singleRight">
-                    {% if first.image %}
-                        <img src="/{{first.image}}">
-                    {% endif %}
-                    <p> {{first.title}}</p>
-                </div>
-            </a>
-            {% endfor %}
-            
-        </div>
-        
-        <div class="rightCat">
-            <h4> اخبار کنکوری </h4>
-            
-            {% for second in news %}
-            <a href="/{{second.id}}">
-                <div class="singleRight">
-                    {% if second.titleImage %}
-                        <img src="/{{second.image}}">
-                    {% endif %}
-                    <p> {{second.title}} </p>
-                </div>
-            </a>
-            {% endfor %}
-        </div>
-        
-        <div class="rightCat">
-            <h4> 118 کنکوری </h4>
-            
-            {% for third in faqs %}
-            <a href="/{{third.id}}">
-                <div class="singleRight">
-                    <p> {{third.question}} </p>
-                </div>
-            </a>
-            {% endfor %}
-        </div>
+
+    <div class="rightCat">
+        <h4> اخبار کنکوری </h4>
+
+        {% for single_news in news %}
+        <a href="/news/{{single_news.id}}">
+            <div class="singleRight">
+                {% if single_news.titleImage %}
+                <img src="/{{single_news.image}}">
+                {% endif %}
+                <p> {{single_news.title}} </p>
+            </div>
+        </a>
+        {% endfor %}
     </div>
-    
-    <div id="footer" style="dir:rtl">
-        <table>
-            <thead>
-                <th style="text-align:center"> ما را دنبال کنید </th>
-                <th style="text-align:center"> لینک های مرتبط </th>
-                <th style="padding-right: 8%"> ارتباط با ما </th>
-            </thead>
-            <tbody>
-                <tr> 
-                    <td> 
-                        <a href="https://telegram.me/moshavere_ekhteraee" style="border-bottom:0"> <img src="/static/images/com.ubuntu.telegram.png" style="clear:both"> </a>
-                        <a href="https://instagram.com/department_ekhteraee/"> <img src="/static/images/apps.12939.9007199266247104.04442c96-e9b7-4ee8-ac9a-ab3480429e8e.png">
-                    </td>
-                    <td> 
-                        <a href="http://sanjesh.org/"> سازمان سنجش </a>
-                        <a href="http://www.iau.ac.ir/"> دانشگاه آزاد </a> 
-                        <a href="http://www.msrt.ir/"> وزارت علوم </a>
-                        <a href="http://www.kanoon.ir/"> کانون </a>
-                    </td>
-                    <td> 
-                        <p>   : شماره های تماس </p>
-                        <p>   0513 - 765 95 74 </p>
-                        <p style="clear:both"> خراسان رضوی-مشهد-فلسطین 10-پلاک 44- مرکز تخصصی مشاوره تحصیلی اختراعی </p>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+
+    <div class="rightCat">
+        <h4> ۱۱۸ کنکوری </h4>
+
+        {% for faq in faqs %}
+        <a href="/{{faq.id}}">
+            <div class="singleRight">
+                <p> {{faq.question}} </p>
+            </div>
+        </a>
+        {% endfor %}
     </div>
+</div>
+
+<div id="footer" style="dir:rtl">
+    <table>
+        <thead>
+        <th style="text-align:center"> ما را دنبال کنید</th>
+        <th style="text-align:center"> لینک های مرتبط</th>
+        <th style="padding-right: 8%"> ارتباط با ما</th>
+        </thead>
+        <tbody>
+        <tr>
+            <td>
+                <a href="https://telegram.me/moshavere_ekhteraee" style="border-bottom:0"> <img
+                        src="/static/images/com.ubuntu.telegram.png" style="clear:both"> </a>
+                <a href="https://instagram.com/department_ekhteraee/"> <img
+                        src="/static/images/apps.12939.9007199266247104.04442c96-e9b7-4ee8-ac9a-ab3480429e8e.png"> </a>
+            </td>
+            <td>
+                <a href="http://sanjesh.org/"> سازمان سنجش </a>
+                <a href="http://www.iau.ac.ir/"> دانشگاه آزاد </a>
+                <a href="http://www.msrt.ir/"> وزارت علوم </a>
+                <a href="http://www.kanoon.ir/"> کانون </a>
+            </td>
+            <td>
+                <p> : شماره های تماس </p>
+
+                <p> 0513 - 765 80 90 </p>
+
+                <p style="clear:both"> خراسان رضوی-مشهد-فلسطین 10-پلاک 44- مرکز تخصصی مشاوره تحصیلی اختراعی </p>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
 </body>

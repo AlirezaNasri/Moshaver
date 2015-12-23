@@ -3,21 +3,22 @@
 {% load filters %}
 
 {% block contents %}
-    <link rel="stylesheet" href="{% static 'css/main1.css' %}">
-    <div class="topMain">
-        <div id="Slider">
-            <div class="container">
-                <div id="slides">
-                    {% for billboard in billboards %}
-                    <div class="slider_content">
-                        <img src="/{{ billboard.image }}">
-                        <div class="slider_caption">{{billboard.caption|slice:"9:"}}</div>
-                    </div>
-                    {% endfor %}
+<link rel="stylesheet" href="{% static 'css/main1.css' %}">
+<div class="topMain">
+    <div id="Slider">
+        <div class="container">
+            <div id="slides">
+                {% for billboard in billboards %}
+                <div class="slider_content">
+                    <img src="/{{ billboard.image }}">
+
+                    <div class="slider_caption">{{billboard.caption|slice:"9:"}}</div>
                 </div>
+                {% endfor %}
             </div>
-            <script src="{% static 'js/jquery.slides.js' %}"></script>
-            <script>
+        </div>
+        <script src="{% static 'js/jquery.slides.js' %}"></script>
+        <script>
                 $(function() {
                     $('#slides').slidesjs({
                         width: 940,
@@ -43,85 +44,87 @@
                         }
                     });
                 });
-          </script>     
-        </div>
-        <div class="linkBoxes">
-            <a href="/workshops"><div class="linkBox workshopBox"><p> کارگاه </p></div></a>
-            <a href="/psychology"><div class="linkBox psyBox"><p> روانشناسی </p> </div></a>
-            <a href="/edu"><div class="linkBox eduBox"><p> آموزشی </p> </div></a>
-        </div>
+
+        </script>
     </div>
-    <div class="main">
-        <div id="tabs" >
-            <a href="#akhbarItem" style="margin-left:25%"><div class="button1">اخبار</div></a>
-            <a href="#kargahItem"><div class="button1">کارگاه ها</div></a>
-        </div>
-        <div class="MainItems">
-            <div id="akhbarItem">
-                {% for single_news in news %}
-                    <div class="singleNews">
-                        <div class="Ntitr">
-                            <img src="/{{single_news.title_image}}"/>
-                            <h3>{{single_news.title}}</h3>
+    <div class="linkBoxes">
+        <a href="/workshops">
+            <div class="linkBox workshopBox"><p> کارگاه </p></div>
+        </a>
+        <a href="/psychology">
+            <div class="linkBox psyBox"><p> کنکوری ها بدانند </p></div>
+        </a>
+        <a href="/edu">
+            <div class="linkBox eduBox"><p> آموزشی </p></div>
+        </a>
+    </div>
+</div>
+<div class="main">
+    <div class="MainBox">
+        <h4> کلاس های اموزشی </h4>
+        {% for class in classes %}
+        <a href="/class/{{ class.id }}"><p>{{ class.title }}</p></a>
+        {% endfor %}
+    </div>
+
+    <div class="linkBoxesVol2">
+        <a href="/news/">
+            <div class="linkBox newsBox"><p> اخبار </p></div>
+        </a>
+        <a href="/gallery/">
+            <div class="linkBox galleryBox"><p> گالری </p></div>
+        </a>
+        <a href="/advisors/">
+            <div class="linkBox advisorBox"><p> مشاورین تحصیلی </p></div>
+        </a>
+        <a href="/faq/">
+            <div class="linkBox faqBox"><p> ۱۱۸ کنکوری</p></div>
+        </a>
+        <!--<a href="/edu/">-->
+            <!--<div class="linkBox advisorBox"><p> مشاورین بالینی </p></div>-->
+        <!--</a>-->
+        <a href="/graduates/">
+            <div class="linkBox gradBox"><p> افتخار افرینان </p></div>
+        </a>
+    </div>
+</div>
+<div class="grads">
+    <h3> افتخار افرینان </h3>
+
+    <div>
+        <div class="prevGrad"></div>
+        <div class="gradRow">
+            {% for single_grad in grads|slice:":3" %}
+            <div class="single">
+                {% if single_grad.image %}
+                <div class="head">
+                    <img src="/{{single_grad.image}}"/>
+                </div>
+                {% endif %}
+                <div class="main">
+                    <h3> {{single_grad.name}} </h3>
+
+                    <div class="details">
+                        <div>
+                            <p>سال</p>
+
+                            <p>{{ single_grad.year }}</p>
                         </div>
-                        <div class="Nmain">
-                            <pre>{{single_news.summary|safe}}</pre>
-                        </div>
-                        <div class="Nfoot">
-                            <p>{{single_news.pub_date|date:"Y-m-d"|jalali}}</p>
-                            <p>{{single_news.author}}</p>
-                        </div>
-                        <div class="blur">
-                            <a href="/news/{{single_news.id}}/"><div class="edameBut">ادامه مطلب </div></a>
+
+                        <div class="space"></div>
+
+                        <div>
+                            <p>رشته</p>
+
+                            <p>{{ single_grad.major }}</p>
                         </div>
                     </div>
-                {% endfor %}
-            </div>
-            
-            <div class="linkBoxesVol2">
-                <a href="/workshops/"><div class="linkBox newsBox"><p> اخبار </p></div></a>
-                <a href="/psychology/"><div class="linkBox galleryBox"><p> گالری </p> </div></a>
-                <a href="/edu/"><div class="linkBox advisorBox"><p> مشاورین تحصیلی </p> </div></a>
-                <a href="/workshops/"><div class="linkBox faqBox"><p> پرسش های متداول </p></div></a>
-                <a href="/edu/"><div class="linkBox advisorBox"><p> مشاورین بالینی </p> </div></a>
-                <a href="/psychology/"><div class="linkBox gradBox"><p> افتخار افرینان </p> </div></a>
-            </div>
-	    </div>
-        <div class="grads">
-            <h3> افتخار افرینان </h3>
-            <div>
-                <div class="prevGrad"></div>
-                <div class="gradRow">
-                    {% for single_grad in grads %}
-                        <div class="single">
-                            {% if single_grad.image %}
-                            <div class="head">
-                                <img src="/{{single_grad.image}}"/>
-                            </div>
-                            {% endif %}
-                            <div class="main">
-                                <h3> {{single_grad.name}} </h3>
-                                <div class="details">
-                                    <div>
-                                        <p>سال</p>
-                                        <p>{{ single_grad.year }}</p>
-                                    </div>
-
-                                    <div class="space"></div>
-
-                                    <div>
-                                        <p>رشته</p>
-                                        <p>{{ single_grad.major }}</p>
-                                    </div>
-                                </div>
-                                <p> {{ single_grad.acc_major }} </p>
-<!--                <p>علامه طباطبایی</p>-->
-                            </div>
-            <!-- <a href="#"> <div class="read-more"> مشاهده </div> </a> -->
-                        </div>
-                    {% endfor %}
+                    <p> {{ single_grad.acc_major }} </p>
                 </div>
-                <div class="nextGrad"></div>
             </div>
+            {% endfor %}
         </div>
+        <div class="nextGrad"></div>
+    </div>
+</div>
 {% endblock %}

@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from Content.models import News, Workshop, PsyContent, EduContent, ImageContent, FAQ, Grad, Advisor, Announcement
+from Content.models import News, Workshop, PsyContent, EduContent, ImageContent, FAQ, Grad, Advisor, Announcement, Class
 
 
 def get_context(next_page=None, prev_page=None):
@@ -26,11 +26,8 @@ def get_context(next_page=None, prev_page=None):
 
 def home_page(req):
     context = get_context()
-    context['classes'] = [
-        {'title': 'Zist'},
-        {'title': 'Shimi'},
-    ]
-    context['grads'] = Grad.objects.all()[:5]
+    context['classes'] = Class.objects.all()[:3]
+    context['grads'] = Grad.objects.all()[:3]
     return render(req, 'home_page.html', context)
 
 
