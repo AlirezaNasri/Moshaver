@@ -3,7 +3,6 @@ from ckeditor.fields import RichTextField
 import datetime
 
 
-
 class ImageContent(models.Model):
     image = models.ImageField(upload_to='static/images')
     caption = models.TextField(null=True, blank=True)
@@ -58,10 +57,11 @@ class Workshop(models.Model):
     when = models.DateTimeField()
 
     def __unicode__(self):
-       	return self.title
+        return self.title
 
     def __str__(self):
-       	return self.title.encode('utf-8')
+        return self.title.encode('utf-8')
+
 
 class Grad(models.Model):
     name = models.CharField(max_length=100)
@@ -83,18 +83,20 @@ class Grad(models.Model):
 
 
 class Advisor(models.Model):
-	name = models.CharField(max_length=100)
-	image = models.ForeignKey(ImageContent)
-	licence = RichTextField()
-	tel = models.CharField(max_length=100)
-	email = models.EmailField()
-	position = models.TextField()
+    name = models.CharField(max_length=100)
+    image = models.ForeignKey(ImageContent)
+    licence = RichTextField()
+    tel = models.CharField(max_length=100)
+    email = models.EmailField()
+    position = models.TextField()
 
-    def __unicode__(self):
-        return self.name
 
-    def __str__(self):
-        return self.name.encode('utf-8')
+def __unicode__(self):
+    return self.name
+
+
+def __str__(self):
+    return self.name.encode('utf-8')
 
 
 class Office(models.Model):
@@ -110,15 +112,16 @@ class Office(models.Model):
 
 
 class PsyContent(models.Model):
-	title = models.CharField(max_length=100)
-	image = models.ForeignKey(ImageContent)
-	pub_date = models.DateTimeField(default=datetime.datetime.now)
-	summary = RichTextField()
-	body = RichTextField()
-	author = models.CharField(max_length=100)
+    title = models.CharField(max_length=100)
+    image = models.ForeignKey(ImageContent)
+    pub_date = models.DateTimeField(default=datetime.datetime.now)
+    summary = RichTextField()
+    body = RichTextField()
+    author = models.CharField(max_length=100)
 
-    def __str__(self):
-        return self.title.encode('utf-8')
+
+def __str__(self):
+    return self.title.encode('utf-8')
 
 
 class Interview(models.Model):
@@ -133,27 +136,30 @@ class Interview(models.Model):
 
 
 class EduContent(models.Model):
-	title = models.CharField(max_length=100)
-	image = models.ForeignKey(ImageContent, null=True, blank=True)
-	pub_date = models.DateTimeField(default=datetime.datetime.now)
-	summary = RichTextField()
-	body = RichTextField()
-	author = models.CharField(max_length=100)
-	files = models.ManyToManyField(FileContent, null=True, blank=True)
+    title = models.CharField(max_length=100)
+    image = models.ForeignKey(ImageContent, null=True, blank=True)
+    pub_date = models.DateTimeField(default=datetime.datetime.now)
+    summary = RichTextField()
+    body = RichTextField()
+    author = models.CharField(max_length=100)
+    files = models.ManyToManyField(FileContent, null=True, blank=True)
 
-    def __str__(self):
-        return self.title.encode('utf-8')
+
+def __str__(self):
+    return self.title.encode('utf-8')
 
 
 class FAQ(models.Model):
-	question = models.TextField()
-	answer = RichTextField()
+    question = models.TextField()
+    answer = RichTextField()
 
-    def __unicode__(self):
-        return self.question
 
-    def __str__(self):
-        return self.question.encode('utf-8')
+def __unicode__(self):
+    return self.question
+
+
+def __str__(self):
+    return self.question.encode('utf-8')
 
 
 class Announcement(models.Model):
