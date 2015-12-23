@@ -1,4 +1,7 @@
 from django.db import models
+from ckeditor.fields import RichTextField
+import datetime
+
 
 class ImageContent(models.Model):
 	image = models.ImageField(upload_to='static/images')
@@ -25,9 +28,9 @@ class News(models.Model):
 	title = models.CharField(max_length=100)
 	title_image = models.ImageField(upload_to='static/images')
 	images = models.ManyToManyField(ImageContent, null=True, blank=True)
-	pub_date = models.DateTimeField(auto_now=True)
-	summary = models.TextField()
-	body = models.TextField()
+	pub_date = models.DateTimeField(default=datetime.datetime.now)
+	summary = RichTextField()
+	body = RichTextField()
 	author = models.CharField(max_length=100)
 
 	def __str__(self):
@@ -41,13 +44,13 @@ class Workshop(models.Model):
 	title = models.CharField(max_length=100)
 	title_image = models.ImageField(upload_to='static/images')
 	images = models.ManyToManyField(ImageContent, null=True, blank=True)
-	summary = models.TextField()
-	body = models.TextField()
+	summary = RichTextField()
+	body = RichTextField()
 	author = models.CharField(max_length=100)
 	audience = models.TextField(null=True, blank=True)
 	audio = models.FileField(upload_to='static', null=True, blank=True)
 	video = models.FileField(upload_to='static', null=True, blank=True)
-	where = models.TextField()
+	where = RichTextField()
 	when = models.DateTimeField()
 
 	def __unicode__(self):
@@ -77,7 +80,7 @@ class Grad(models.Model):
 class Advisor(models.Model):
 	name = models.CharField(max_length=100)
 	image = models.ForeignKey(ImageContent)
-	licence = models.TextField()
+	licence = RichTextField()
 	tel = models.CharField(max_length=100)
 	email = models.EmailField()
 	position = models.TextField()
@@ -102,9 +105,9 @@ class Office(models.Model):
 class PsyContent(models.Model):
 	title = models.CharField(max_length=100)
 	image = models.ForeignKey(ImageContent)
-	pub_date = models.DateTimeField(auto_now=True)
-	summary = models.TextField()
-	body = models.TextField()
+	pub_date = models.DateTimeField(default=datetime.datetime.now)
+	summary = RichTextField()
+	body = RichTextField()
 	author = models.CharField(max_length=100)
 
 	def __unicode__(self):
@@ -126,9 +129,9 @@ class Interview(models.Model):
 class EduContent(models.Model):
 	title = models.CharField(max_length=100)
 	image = models.ForeignKey(ImageContent, null=True, blank=True)
-	pub_date = models.DateTimeField(auto_now=True)
-	summary = models.TextField()
-	body = models.TextField()
+	pub_date = models.DateTimeField(default=datetime.datetime.now)
+	summary = RichTextField()
+	body = RichTextField()
 	author = models.CharField(max_length=100)
 	files = models.ManyToManyField(FileContent, null=True, blank=True)
 
@@ -140,7 +143,7 @@ class EduContent(models.Model):
 
 class FAQ(models.Model):
 	question = models.TextField()
-	answer = models.TextField()
+	answer = RichTextField()
 
 	def __unicode__(self):
 		return self.question

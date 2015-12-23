@@ -8,5 +8,5 @@ MONTHS = ['فروردین', 'اردیبهشت', 'خرداد', 'تیر', 'مرد�
 @register.filter(name='jalali')
 def jalali(value):
         value = convertor.Gregorian(value.encode('utf-8')).persian_string()
-        month = MONTHS[int(value.split('-')[1])]
+        month = MONTHS[int(value.split('-')[1]) - 1]
         return value.split('-')[0] + ',' + month.decode('utf-8') + ' ' + value.split('-')[2]

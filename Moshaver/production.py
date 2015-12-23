@@ -28,6 +28,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Content',
+    'ckeditor',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -97,3 +98,5 @@ STATIC_URL =  '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
 APPEND_SLASH = True
+
+CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
