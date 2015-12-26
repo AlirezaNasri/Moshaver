@@ -53,10 +53,26 @@
     </div>
     <div class="main">
             <div class="MainBox">
-                <h4> کلاس های اموزشی </h4>
-                {% for single_class in classes%}
-                    <a href="/{{single_class.id}}"><p> {{single_class.title}} </p></a>
-                {% endfor %}
+                <div class="lessons">
+                    <div id="scroller">
+                        <div class="lessonHead">
+                            <h4> کلاس های اموزشی </h4>
+                            <div class="items">
+                                {% for class in classes %}
+                                <a href="#{{class.id}}"><p> {{class.title}} </p></a>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        {% for class in classes %}
+                        <div class="lessonBody" id="{{class.id}}">
+                            <h4 class="backBut"> بازگشت </h4>
+                            <div class="items">
+                                <pre> {{class.body}} </pre>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
             </div>
             
             <div class="linkBoxesVol2">

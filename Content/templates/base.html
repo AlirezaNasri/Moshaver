@@ -45,14 +45,14 @@
             <h4> اطلاعیه های مرکز </h4>
             
             {% for first in firsts %}
-            <a href="/{{first.id}}">
-                <div class="singleRight">
+            <table class="singleRight">
+                <tr>
                     {% if first.image %}
-                        <img src="/{{first.image}}">
+                    <td><a href="/{{first.id}}"><img src="/{{first.image}}"></a></td>
                     {% enfif %}
-                    <p> {{first.title}}</p>
-                </div>
-            </a>
+                    <td><a href="/{{first.id}}"><p> {{first.title}}</p></a></td>
+                </tr>
+            </table>
             {% endfor %}
             
         </div>
@@ -61,14 +61,14 @@
             <h4> اخبار کنکوری </h4>
             
             {% for second in seconds %}
-            <a href="/{{second.id}}">
-                <div class="singleRight">
+            <table class="singleRight">
+                <tr>
                     {% if second.image %}
-                        <img src="/{{second.image}}">
+                    <td><a href="/{{second.id}}"><img src="/{{second.image}}"></a></td>
                     {% endif %}
-                    <p> {{second.title}} </p>
-                </div>
-            </a>
+                    <td><a href="/{{second.id}}"><p> {{second.title}} </p></a></td>
+                </tr>
+            </table>
             {% endfor %}
         </div>
         
@@ -76,14 +76,14 @@
             <h4> 118 کنکوری </h4>
             
             {% for third in thirds %}
-            <a href="/{{third.id}}">
-                <div class="singleRight">
+            <table class="singleRight">
+                <tr>
                     {% if third.image %}
-                        <img src="/{{third.image}}">
+                    <td><a href="/{{third.id}}"><img src="/{{third.image}}"></a></td>
                     {% endif %}
-                    <p> {{third.title}} </p>
-                </div>
-            </a>
+                    <td><a href="/{{third.id}}"><p> {{third.title}} </p></a></td>
+                </tr>
+            </table>
             {% endfor %}
         </div>
     </div>

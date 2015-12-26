@@ -111,6 +111,7 @@ pre {
     display: inline-block;
     color: black;
     text-decoration: none;
+    direction: rtl;
 }
 
 .header a:hover{

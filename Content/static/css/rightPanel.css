@@ -6,8 +6,13 @@
     right: 0;
     vertical-align: top;
     text-align:right;
-	margin-bottom: 200px;
+	margin-bottom: 1%;
     float: right;
+    direction: rtl;
+}
+
+.rightCat a{
+    text-decoration: none;
 }
 
 .rightCat {
@@ -15,10 +20,11 @@
     margin-bottom: 10px;
 }
 
-.rightCat .singleNews p{
+.rightCat .singleRight p{
     background-color: white;
     margin: 0;
     vertical-align: middle;
+    padding: 5px;
 }
 
 .rightCat h4{
@@ -44,9 +50,6 @@
     padding: 5px;
 }
 
-.rightCat > p{
-    border-bottom: 1px solid #EAEAEA;
-    background-color: white;
-    margin:0;
-    padding: 5px;
+.rightCat a:hover{
+    color: #666;
 }

@@ -32,9 +32,8 @@ $(document).ready(function() {
         else
         {
             $('.rightPanle').show();
-            $('.rightPanle').css("display", "inline-block");
         }
-        $(window).trigger('resize');
+        alert($(window).width());
     });
     
     $(window).on( 'resize', function () {
@@ -43,7 +42,6 @@ $(document).ready(function() {
             x -= $('.leftPanel').outerWidth();
         if($('.rightPanle').is(":visible") && $(window).width() > 500)
             x -= $('.rightPanle').outerWidth();
-        $('.contain').width(x-30);
+        $('.contain').width(x-20);
     });
 });
-

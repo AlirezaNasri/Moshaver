@@ -30,6 +30,8 @@
                     <div class="foot">
                         <p>{{single_edu_content.pub_date|date:"Y-m-d"|jalali}}</p>
                         <p>{{single_edu_content.author}}</p>
+                        
+                        {% if single_edu_content.files.all %}
                         <div class="download">
                             <i class="fa fa-caret-down"></i>
                             <p>دریافت فایل</p>
@@ -39,6 +41,7 @@
                                 {% endfor %}
                             </div>
                         </div>
+                        {% endif %}
                         <div class="read-more">
                             <a href="/edu/{{single_edu_content.id}}">ادامه مطلب</a>
                         </div>
