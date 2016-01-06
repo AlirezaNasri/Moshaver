@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load filters %}
+
+{% block contents %}
+    <link rel="stylesheet" href="{% static 'css/single_lesson.css' %}">
+    <div class="Category">
+        <div class="space"></div>
+        <h3> نام درس </h3>
+    </div>
+    <div class="scienceCommittee">
+        <h2>اعضای هیئت علمی</h2>
+        {% for singleCommit in science_committees %}
+        <div class="single">
+            <img src="/{{singleCommit.image}}">
+            <p class="name"> {{singleCommit.name}} </p>
+            <p class="job"> هیئت علمی </p>
+            <p class="mail"> {{singleCommit.mail}} </p>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="resources">
+        <h2>منابع</h2>
+        
+        {% for resource in recources%}
+        <div class="resource">
+            <p class="number">{{forloop.counter}}</p>
+            <p>{{resource.body}}</p>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="sampleTest">
+        <h2> نمونه سوال و خلاصه درس </h2>
+        
+        {% for degree in degrees%}
+        <div class="files">
+            <h3>سوم دبیرستان</h3>
+
+            <h4> نمونه سوال </h4>
+            <div class="left">
+                {% for sample_test in degree.sample_tests%}
+                    {% if forloop.counter|divisibleby:2 %}
+                    <a href="{{sample.id}}">sample.title</a>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div class="right">
+                {% for sample_test in degree.sample_tests%}
+                    {% if forloop.counter|divisibleby:2 %}
+                    {% else %}
+                    <a href="{{sample.id}}">sample.title</a>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <h4> خلاصه درس </h4>
+            <div class="left">
+                {% for summary in degree.summaries%}
+                    {% if forloop.counter|divisibleby:2 %}
+                    <a href="{{summary.id}}">summary.title</a>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div class="right">
+                {% for summary in degree.summaries%}
+                    {% if forloop.counter|divisibleby:2 %}
+                    {% else %}
+                    <a href="{{summary.id}}">summary.title</a>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}

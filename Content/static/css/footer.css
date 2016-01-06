@@ -3,13 +3,12 @@
     bottom: 0;
     margin: 0;
     margin-top: 1%;
-    width: 102%;
-    margin-left: -10px;
+    width: 100%;
 }
 
 #footer table{
     width: 100%;
-    background-color: #404040;
+    background-color: #2A2A2A;
 }
 
 #footer th{
@@ -19,7 +18,6 @@
 }
 
 #footer td{
-    border-right: 1px solid #454545;
     padding: 0;
     text-align: center;
     height: 100%;

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load filters %}
+
+{% block contents %}
+	<link rel="stylesheet" href="{% static 'css/All_landscape.css' %}">
+
+	<div class="Category">
+        <div class="space"></div>
+        <h3> اخبار </h3>
+    </div>
+    {% for single_notif in notifications %}
+    <div class="single">
+        <div class="head">
+            <img src="/{{single_notif.title_image}}"/>
+            <h3>{{single_notif.title}}</h3>
+        </div>
+        <div class="main">
+            <pre>{{single_notif.summary}}</pre>
+        </div>
+        <div class="foot">
+            <p>{{single_notif.pub_date|date:"Y-m-d"|jalali}}</p>
+            <p>{{single_notif.author}}</p>
+            <div class="read-more">
+                <a href="/notifications/{{single_notif.id}}">ادامه مطلب</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    
+    <div id="page-number">
+        {% if next_page %}
+        <a href="/news/?&page={{next_page}}"><p>صفحه ی بعدی >> </p></a>
+        {% endif %}
+        
+        {% if prev_page %}
+        <a href="/news/?&page={{prev_page}}"><p> << صفحه ی قبلی</p></a> 
+        {% endif %}
+    </div>
+{% endblock %}

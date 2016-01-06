@@ -1,7 +1,7 @@
 @font-face { 
 	font-family: BRoya;
-   	src: url('/static/font/BRoya.ttf'),
-	url('/static/font/BRoya.eot');
+   	src: url('font/BRoya.ttf'),
+	url('font/BRoya.eot');
  } 
 body {
 	font-family: 'BRoya';
@@ -13,12 +13,9 @@ body {
     -webkit-font-smoothing: antialiased;
 
     line-height: 200%;
-    max-width: 1200px;
+    max-width: 1100px;
     position: relative;
     margin: auto;
-    
-    padding: 10px;
-    border: 1px solid #eee;
 }
 
 pre {
@@ -34,11 +31,11 @@ pre {
 
 .header {
 	position:relative;
+	background-color:#f2f2f2;
 	width:100%;
-}
-
-.header .topheader {
-    padding: 20px;
+    -webkit-box-shadow: 0px 3px 10px -1.5px rgba(64,64,64,0.2);
+    -moz-box-shadow: 0px 3px 10px -1.5px rgba(64,64,64,0.2);
+    box-shadow: 0px 3px 10px -1.5px rgba(64,64,64,0.2);
 }
 
 .header input{
@@ -51,7 +48,7 @@ pre {
     -moz-appearance: none;
     appearance: none;
     outline: 0;
-    border: 1px solid #DDD;
+    border: 1px solid #EDEDED;
     font-size: 18px;
     line-height: 20px;
     direction: rtl;
@@ -60,7 +57,7 @@ pre {
     margin-top: 10px;
     margin-bottom: 10px;
     margin-left: 1%;
-    background-color: #FCFCFC;
+    background-color: #FAFAFA;
     border-radius: 2px;
 }
 
@@ -70,28 +67,27 @@ pre {
     -moz-appearance: none;
     appearance: none;
     background: white;
-    border: 1px solid #BBB;
 }
 
 .header input::-webkit-input-placeholder{
-    color: #999;
+    color: #AAA;
     font-size: 1.1em;
     font-family: "BRoya";
 }
 .header input:-moz-placeholder{
-    color: #999;
+    color: #AAA;
     font-size: 1.1em;
     font-family: "BRoya";
 }
 
 .header input::-moz-placeholder{
-    color: #999;
+    color: #AAA;
     font-size: 1.1em;
     font-family: "BRoya";
 }
 
 .header input:-ms-input-placeholde{
-    color: #999;
+    color: #AAA;
     font-size: 1.1em;
     font-family: "BRoya";
 }
@@ -120,23 +116,14 @@ pre {
 
 .header a:hover{
     color:#404040;
-    transform: scale(1.04);
+    transform: scale(1.05);
 }
 
 .header .menu{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    background-color:#EEE;
     justify-content: space-around;
-    padding: 10px;
-    -webkit-box-shadow: 0px 3px 10px -1.5px rgba(64,64,64,0.2);
-    -moz-box-shadow: 0px 3px 10px -1.5px rgba(64,64,64,0.2);
-    box-shadow: 0px 3px 10px -1.5px rgba(64,64,64,0.2);
-    font-size: 1.23em;
-    margin-bottom: 1%;
-    width: 100%;
-    margin-left: -10px;
 }
 
 #showMenu {
@@ -295,6 +282,15 @@ a:visited {
     background-position: left center;
 }
 
+.contain {
+    margin-top: 1%;
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    width: 53.5%;
+    margin-left: 1%;
+}
+
 .Category{
     position: relative;
     display: flex;
@@ -324,16 +320,6 @@ a:visited {
     width: calc(100% + 10px);
     margin-left: -5px;
     border-bottom: 1px solid #c2e2e2;
-}
-
-
-.contain {
-    margin-top: 1%;
-    position: relative;
-    display: inline-block;
-    vertical-align: top;
-    width: 53.5%;
-    margin-left: 1%;
 }
 
 @media (max-width: 1000px) {
